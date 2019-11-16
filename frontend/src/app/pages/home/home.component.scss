@@ -1,0 +1,70 @@
+.section {
+  animation: fadeIn 500ms ease-in both;
+  margin: 1rem;
+
+  &--profile, &--about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--profile {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--about {
+    align-items: start;
+  }
+}
+
+.profile-container {
+  width: 10rem;
+  height: 10rem;
+  border: var(--pallete-contrast-light) .25rem solid;
+
+  &, &--image {
+    border-radius: 20px;
+  }
+
+  &--image {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.profile-description-container {
+  margin-top: 2rem;
+
+  &--name, &--education {
+    text-align: center;
+  }
+
+  &--name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &--education {
+    margin-top: .5rem;
+  }
+}
+
+.profile-info-container {
+  margin-top: .5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  h3 {
+    margin-left: .75rem;
+  }
+
+  &--location,
+  &--github,
+  &--linkedin,
+  &--sourcerer {
+    color: var(--pallete-contrast-light);
+    justify-content: center;
+  }
+
+}
