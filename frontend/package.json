@@ -5,9 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --prod --base-href https://H4ad.github.io",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "publish": "ngh --dir=./dist/h4ad -b master",
+    "deploy": "npm run build:prod && npm run publish"
   },
   "private": true,
   "dependencies": {
