@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --prod --base-href https://H4ad.github.io",
+    "build:prod": "ng build --prod --base-href https://viniciusl.com.br",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
