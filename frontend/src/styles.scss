@@ -20,7 +20,12 @@ svg path {
   fill: currentColor;
 }
 
-a {
+.no-link {
+  color: currentColor;
+  text-decoration: none;
+}
+
+a:not(.no-link) {
   color: var(--pallete-contrast-light);
   font-weight: bold;
 }
