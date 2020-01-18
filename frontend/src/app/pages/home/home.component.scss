@@ -1,6 +1,9 @@
 .section {
+  max-width: 1200px;
   animation: fadeIn 500ms ease-in both;
-  margin: 1rem;
+  margin: 0 auto;
+  padding: 1rem;
+  border-bottom: 1px solid var(--pallete-contrast-light);
 
   &--profile, &--about {
     display: flex;
@@ -10,6 +13,7 @@
   &--profile {
     align-items: center;
     justify-content: center;
+    padding-bottom: 2rem;
   }
 
   &--about {
@@ -40,23 +44,25 @@
   }
 
   &--name {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
   }
 
   &--education {
-    margin-top: .5rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
   }
 }
 
 .profile-info-container {
-  margin-top: .5rem;
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
   h3 {
     margin-left: .75rem;
+    font-size: 1.2rem;
   }
 
   &--location,
@@ -70,18 +76,17 @@
 }
 
 .about-description-container {
-  margin-top: 2rem;
 
   &--title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
   }
 
   &--text {
     margin-top: .5rem;
     color: var(--pallete-contrast-light);
-    font-size: 1rem;
-    line-height: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
     text-align: justify;
   }
 }
