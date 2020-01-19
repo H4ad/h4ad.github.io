@@ -1,0 +1,162 @@
+.fill-contain {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.project-item {
+  background-color: var(--pallete-contrast-light);
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.21);
+  display: flex;
+  position: relative;
+
+  &--badges {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 67px;
+
+    .badge {
+      height: 43px;
+      width: 100%;
+      background-image: url('../../../assets/svgs/badge_container.svg');
+      background-repeat: no-repeat;
+      margin-bottom: 8px;
+    }
+  }
+
+  &--body {
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+  }
+
+  &--image {
+    height: 40%;
+    padding: 20%;
+  }
+
+  &--description {
+    flex: 1;
+
+    h2, p {
+      color: var(--pallete-dark);
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin: 16px 0;
+      text-align: justify;
+      white-space: pre-line;
+    }
+  }
+
+  &--button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+
+    a {
+      height: 44px;
+      width: 100%;
+      color: #F6F7B0;
+      background-color: #171F35;
+      text-align: center;
+      line-height: 44px;
+      box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.21);
+    }
+  }
+}
+
+.project-item:not(.project-item--shell) {
+  .shell-image, .shell-title, .shell-description {
+    display: none;
+  }
+}
+
+.project-item--shell {
+
+  .fill-contain, .project-item--text {
+    display: none;
+  }
+
+  .badge {
+    &--shell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--shell-icon {
+      height: 40%;
+      width: 40%;
+      filter: blur(8px);
+      border-radius: 50%;
+
+      &--cyan {
+        background-color: cyan;
+      }
+
+      &--red {
+        background-color: red;
+      }
+    }
+  }
+
+  .shell-image, .shell-description {
+    --shell-color: rgba(0, 0, 0, 0.065);
+    --shell-background-color: rgba(255, 255, 255, 0.065);
+    background: linear-gradient(to right, var(--shell-color) 8%, var(--shell-background-color) 18%, var(--shell-color) 33%);
+    background-size: 800px 104px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+  }
+
+  .shell-image {
+    height: 200px;
+    width: 100%;
+  }
+
+  .shell-description {
+    &:nth-child(1) {
+      width: 100%;
+    }
+    &:nth-child(2) {
+      width: 80%;
+    }
+    &:nth-child(3) {
+      width: 90%;
+    }
+    &:nth-child(5) {
+      width: 100%;
+    }
+    &:nth-child(6) {
+      width: 90%;
+    }
+  }
+
+  .project-item--button {
+    opacity: .5;
+    pointer-events: none;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0
+  }
+
+  100% {
+    background-position: 468px 0
+  }
+}
+

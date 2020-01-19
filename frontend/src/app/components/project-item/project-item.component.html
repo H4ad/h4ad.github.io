@@ -1,0 +1,41 @@
+<div class="project-item" [ngClass]="{ 'project-item--shell': content.isShellState }">
+  <div class="project-item--badges">
+    <ng-container *ngIf="!content.isShellState">
+      <ng-container *ngFor="let badge of content.badges">
+        <div class="badge">
+          <img class="fill-contain" [src]="badge.imageUrl" [alt]="badge.imageAlt">
+        </div>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="content.isShellState">
+      <div class="badge badge--shell">
+        <div class="badge--shell-icon badge--shell-icon--cyan"></div>
+      </div>
+      <div class="badge badge--shell">
+        <div class="badge--shell-icon badge--shell-icon--red"></div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="project-item--body">
+    <div class="project-item--image">
+      <img class="fill-contain" [src]="content.imageUrl" [alt]="content.imageAlt">
+      <div class="shell-image"></div>
+    </div>
+    <div class="project-item--description">
+      <h2 class="project-item--title">{{ content.title }}</h2>
+      <p class="project-item--text" [innerText]="content.description"></p>
+
+      <div>
+        <p class="shell-description">&nbsp;</p>
+        <p class="shell-description">&nbsp;</p>
+        <p class="shell-description">&nbsp;</p>
+        <br>
+        <p class="shell-description">&nbsp;</p>
+        <p class="shell-description">&nbsp;</p>
+      </div>
+    </div>
+    <div class="project-item--button">
+      <a [href]="content.seeMoreLink">Ver mais</a>
+    </div>
+  </div>
+</div>

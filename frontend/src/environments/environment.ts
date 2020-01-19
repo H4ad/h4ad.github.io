@@ -7,6 +7,7 @@ export const environment = {
   isMockupEnabled: true,
   api: {
     baseUrl: '',
+    getProjects: '/projects',
   },
 };
 
