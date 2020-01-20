@@ -10,8 +10,8 @@
       "start": "ts-node src/index.ts",
       "start:dev": "nest start --watch",
       "start:debug": "nest start --debug --watch",
-      "prestart:prod": "rimraf dist && npm run build",
-      "start:prod": "node dist/src/main.js",
+      "build:prod": "rm -r -f dist && rimraf dist && npm run build",
+      "start:prod": "node dist/main.js",
       "lint": "tslint -p tsconfig.json -c tslint.json",
       "test": "jest",
       "test:watch": "jest --watch",
@@ -19,11 +19,12 @@
       "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
       "test:e2e": "jest --config ./test/jest-e2e.json",
       "start:azure": "npm run deploy && func host start",
-      "deploy": "rm -r -f dist && npm run prestart:prod",
       "typeorm:cli": "ts-node ./node_modules/typeorm/cli -f ormconfig.js",
       "add-migration": "npm run typeorm:cli -- migration:generate -n",
       "migration": "npm run typeorm:cli -- migration:run",
-      "revert-migration": "npm run typeorm:cli -- migration:revert"
+      "revert-migration": "npm run typeorm:cli -- migration:revert",
+      "build:docker": "docker build . -t h4ad/api",
+      "deploy:docker": "npm run build:docker && docker push h4ad/api"
    },
    "dependencies": {
       "@nestjs/common": "^6.10.14",

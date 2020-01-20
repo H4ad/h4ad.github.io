@@ -7,3 +7,4 @@ temp/
 swagger/*
 .env
 *.db
+dist
