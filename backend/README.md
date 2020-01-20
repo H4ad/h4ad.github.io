@@ -13,8 +13,6 @@ npm i typeorm nodemon -g
 
 Se não possuir o Docker e o Docker Compose instalado, instale na máquina antes para conseguir usar o banco MySQL localmente.
 
-Após instalar, execute `docker-compose up -d` para iniciar o banco de dados.
-
 ### MySQL
 
 Use o seguinte comando para criar o arquivo de configurações a partir do exemplo:
