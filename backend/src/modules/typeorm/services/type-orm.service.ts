@@ -41,6 +41,9 @@ export class TypeOrmService implements TypeOrmOptionsFactory {
       entities: [
         ...TypeOrmEntities,
       ],
+      migrations: [
+        __dirname + '/../../../typeorm/migrations/**/*{.ts,.js}',
+      ],
     };
 
     if (this.config.DB_TYPE === 'mysql') {
