@@ -20,18 +20,10 @@
   <meta property="og:url" content="https://viniciusl.com.br/">
   <meta property="og:site_name" content="H4ad">
   <meta property="og:image" content="https://avatars3.githubusercontent.com/u/12551007?v=4">
-  <script>
-    !function(n,e){var t,o,i,c=[],f={passive:!0,capture:!0},r=new Date,a="pointerup",u="pointercancel";function p(n,c){t||(t=c,o=n,i=new Date,w(e),s())}function s(){o>=0&&o<i-r&&(c.forEach(function(n){n(o,t)}),c=[])}function l(t){if(t.cancelable){var o=(t.timeStamp>1e12?new Date:performance.now())-t.timeStamp;"pointerdown"==t.type?function(t,o){function i(){p(t,o),r()}function c(){r()}function r(){e(a,i,f),e(u,c,f)}n(a,i,f),n(u,c,f)}(o,t):p(o,t)}}function w(n){["click","mousedown","keydown","touchstart","pointerdown"].forEach(function(e){n(e,l,f)})}w(n),self.perfMetrics=self.perfMetrics||{},self.perfMetrics.onFirstInputDelay=function(n){c.push(n),s()}}(addEventListener,removeEventListener);
-  </script>
-
-</head>
-<body class="background--dark">
-  <app-root></app-root>
 
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-performance.js"></script>
-
   <script>
     var firebaseConfig = {
       apiKey: "AIzaSyAPd9PxP3Db02F48aS6U7c_hVWFJ6O85wI",
@@ -47,18 +39,9 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
     firebase.performance();
-
-    perfMetrics.onFirstInputDelay(function(delay, evt) {
-      ga('send', 'event', {
-        eventCategory: 'Perf Metrics',
-        eventAction: 'first-input-delay',
-        eventLabel: evt.type,
-        // Event values must be an integer.
-        eventValue: Math.round(delay),
-        // Exclude this event from bounce rate calculations.
-        nonInteraction: true,
-      });
-    });
   </script>
+</head>
+<body class="background--dark">
+  <app-root></app-root>
 </body>
 </html>
