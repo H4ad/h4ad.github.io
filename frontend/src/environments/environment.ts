@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  isMockupEnabled: true,
+  isMockupEnabled: false,
   api: {
-    baseUrl: '',
-    getProjects: '/projects',
+    baseUrl: 'http://api.viniciusl.com.br/prod',
+    getProjects: '/projects?join=badges',
   },
 };
 
