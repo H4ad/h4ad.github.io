@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   isMockupEnabled: false,
   api: {
-    baseUrl: 'http://api.viniciusl.com.br/prod',
+    baseUrl: 'https://api.viniciusl.com.br/prod',
     getProjects: '/projects?join=badges',
   },
 };
