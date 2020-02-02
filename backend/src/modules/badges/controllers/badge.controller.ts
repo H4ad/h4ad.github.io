@@ -90,6 +90,7 @@ export class BadgeController extends BaseCrudController<BadgeEntity, BadgeServic
     const entity = new BadgeEntity({
       imageUrl: payload.imageUrl,
       imageAlt: payload.imageAlt,
+      name: payload.name,
     });
 
     return this.base.createOneBase(crudRequest, entity).then(response => mapCrud(BadgeProxy, response));
@@ -110,6 +111,7 @@ export class BadgeController extends BaseCrudController<BadgeEntity, BadgeServic
       id: (+nestRequest.params.id),
       ...!isNullOrUndefined(payload.imageUrl) && { imageUrl: payload.imageUrl },
       ...!isNullOrUndefined(payload.imageAlt) && { imageAlt: payload.imageAlt },
+      ...!isNullOrUndefined(payload.name) && { name: payload.name },
     });
 
     return this.base.replaceOneBase(crudRequest, entity).then(response => mapCrud(BadgeProxy, response));

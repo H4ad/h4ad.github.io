@@ -23,12 +23,19 @@ export class BadgeProxy extends BaseCrudProxy {
   constructor(partial: Partial<BadgeEntity> | BadgeEntity) {
     super(partial);
 
+    this.name = partial.name;
     this.imageUrl = partial.imageUrl;
     this.imageAlt = partial.imageAlt;
     this.projects = (Array.isArray(partial.projects) ? partial.projects : []).map(({ badges, ...project }) => new ProjectProxy(project));
   }
 
   //#endregion
+
+  /**
+   * O nome da insignia
+   */
+  @ApiModelProperty()
+  name: string;
 
   /**
    * A imagem do projeto

@@ -1,7 +1,7 @@
 //#region Imports
 
 import { ApiModelPropertyOptional } from '@nestjs/swagger';
-import { IsOptional, IsString, IsUrl } from 'class-validator';
+import { IsOptional, IsString, IsUrl, MaxLength, MinLength } from 'class-validator';
 
 import { DefaultValidationMessages } from '../../../models/enums/default-validation-messages';
 
@@ -13,13 +13,23 @@ import { DefaultValidationMessages } from '../../../models/enums/default-validat
 export class BadgeUpdatePayload {
 
   /**
+   * O nome para essa insignia
+   */
+  @ApiModelPropertyOptional()
+  @IsOptional()
+  @IsString({ message: DefaultValidationMessages.IsString })
+  @MaxLength(10, { message: 'O nome da insignia não pode ter mais que 10 caracteres.' })
+  @MinLength(1, { message: 'O nome da insignia deve ter no mínimo 1 caracter.' })
+  name?: string;
+
+  /**
    * A imagem do projeto
    */
   @ApiModelPropertyOptional()
   @IsOptional()
   @IsString({ message: DefaultValidationMessages.IsString })
   @IsUrl({ }, { message: DefaultValidationMessages.IsUrl })
-  imageUrl: string;
+  imageUrl?: string;
 
   /**
    * O texto alternativo para a imagem do projeto
@@ -27,6 +37,6 @@ export class BadgeUpdatePayload {
   @ApiModelPropertyOptional()
   @IsOptional()
   @IsString({ message: DefaultValidationMessages.IsString })
-  imageAlt: string;
+  imageAlt?: string;
 
 }

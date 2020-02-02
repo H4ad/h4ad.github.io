@@ -1,6 +1,6 @@
 //#region Imports
 
-import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
+import { Column, Entity, ManyToMany } from 'typeorm';
 
 import { BaseEntity } from '../../models/base/base-entity';
 import { ProjectEntity } from './project.entity';
@@ -25,6 +25,12 @@ export class BadgeEntity extends BaseEntity {
   }
 
   //#endregion
+
+  /**
+   * O nome para essa insignia
+   */
+  @Column({ nullable: false, default: '-' })
+  name: string;
 
   /**
    * A imagem do projeto
