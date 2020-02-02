@@ -1,6 +1,60 @@
 <div class="scroller">
+  <nav class="nav" [ngClass]="{ 'nav--mobile--show': shouldShowMenu, 'nav--hide': !shouldShowMenu }">
+    <div class="nav--item">
+      <div (click)="shouldShowMenu = !shouldShowMenu;" class="detect-hover"></div>
+      <a  (click)="shouldShowMenu = false;true;" href="#">Menu</a>
+      <svg class="no-inherit" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 165 45">
+        <path class="pointer-events-none" fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
+        <path class="path-activated" fill="#171F35" stroke="#F6F7B0" stroke-width="2" d="M144.29 44h-98.1l18.56-21.32.59-.67-.6-.66L46.4 1h97.9l18.77 21.03L144.3 44z"/>
+        <path fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
+        <path fill="#171F35" d="M17 30h24v-2.67H17V30zm0-6.67h24v-2.66H17v2.66zM17 14v2.67h24V14H17z"/>
+      </svg>
+    </div>
+    <div class="nav--item">
+      <div class="detect-hover"></div>
+      <a (click)="shouldShowMenu = false;true;" href="#">Entrar</a>
+      <svg class="no-inherit" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 165 45">
+        <path class="pointer-events-none" fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
+        <path class="path-activated" fill="#171F35" stroke="#F6F7B0" stroke-width="2" d="M144.29 44h-98.1l18.56-21.32.59-.67-.6-.66L46.4 1h97.9l18.77 21.03L144.3 44z"/>
+        <path fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
+        <path class="pointer-events-none" fill="#171F35" d="M29 9a12.94 12.94 0 00-12.14 8.35l-.23.65h2.85l.12-.31A10.34 10.34 0 1136.3 29.3a10.26 10.26 0 01-7.3 3.03 10.28 10.28 0 01-9.4-6.02l-.12-.32h-2.86l.23.65A13 13 0 1029 9z"/>
+        <path class="pointer-events-none" fill="#171F35" d="M16 23.34h11.86l-2.73 2.8L27 28l6-6-6-6-1.94 1.87 2.8 2.8H16v2.67z"/>
+      </svg>
+    </div>
+    <div class="nav--item">
+      <div class="detect-hover"></div>
+      <a (click)="shouldShowMenu = false;true;" href="#perfil">H4ad</a>
+      <svg class="no-inherit" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 165 45">
+        <path class="pointer-events-none" fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
+        <path class="path-activated" fill="#171F35" stroke="#F6F7B0" stroke-width="2" d="M144.29 44h-98.1l18.56-21.32.59-.67-.6-.66L46.4 1h97.9l18.77 21.03L144.3 44z"/>
+        <path fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
+        <path fill="#171F35" d="M29 22c3.3 0 6-2.7 6-6s-2.7-6-6-6-6 2.7-6 6 2.7 6 6 6zm0 3c-3.97 0-12 2.03-12 6v3h24v-3c0-3.97-8.03-6-12-6z"/>
+      </svg>
+    </div>
+    <div class="nav--item">
+      <div class="detect-hover"></div>
+      <a (click)="shouldShowMenu = false;true;" href="#sobre-mim">Sobre</a>
+      <svg class="no-inherit" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 165 45">
+        <path class="pointer-events-none" fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
+        <path class="path-activated" fill="#171F35" stroke="#F6F7B0" stroke-width="2" d="M144.29 44h-98.1l18.56-21.32.59-.67-.6-.66L46.4 1h97.9l18.77 21.03L144.3 44z"/>
+        <path fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
+        <path fill="#171F35" d="M29 11.63A10.33 10.33 0 0139.38 22 10.33 10.33 0 0129 32.38 10.33 10.33 0 0118.62 22 10.33 10.33 0 0129 11.62zM29 9a13 13 0 100 26 13 13 0 000-26z"/>
+        <path fill="#171F35" d="M30.31 28.5H27.7v-7.81h2.62v7.81zm0-10.38H27.7V15.5h2.62v2.63z"/>
+      </svg>
+    </div>
+    <div class="nav--item">
+      <div class="detect-hover"></div>
+      <a (click)="shouldShowMenu = false;true;" href="#meus-projetos">Projetos</a>
+      <svg class="no-inherit" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 165 45">
+        <path class="pointer-events-none" fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
+        <path class="path-activated" fill="#171F35" stroke="#F6F7B0" stroke-width="2" d="M144.29 44h-98.1l18.56-21.32.59-.67-.6-.66L46.4 1h97.9l18.77 21.03L144.3 44z"/>
+        <path fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M1 44V1h47.35L68 22.03 48.35 44H1z"/>
+        <path fill="#171F35" d="M24.9 27.13L18.74 21l6.15-6.13L23.02 13 15 21l8.02 8 1.88-1.87zm8.2 0L39.25 21l-6.15-6.13L34.98 13 43 21l-8.02 8-1.88-1.87z"/>
+      </svg>
+    </div>
+  </nav>
 
-  <section class="section section--profile">
+  <section id="perfil" class="section section--profile">
     <div class="profile-container">
       <img class="profile-container--image" src="https://avatars3.githubusercontent.com/u/12551007?v=4"
            alt="Essa é a minha foto de perfil.">
@@ -99,5 +153,4 @@
       </ng-container>
     </div>
   </section>
-
 </div>

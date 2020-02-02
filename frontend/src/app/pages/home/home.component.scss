@@ -4,12 +4,130 @@
   max-height: 100vh;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.nav {
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+
+  svg {
+    height: 100%;
+  }
+
+  .path-activated {
+    visibility: hidden;
+    pointer-events: none;
+    stroke-dasharray: 312px;
+    stroke-dashoffset: 312px;
+    transition: stroke-dashoffset 400ms ease;
+  }
+
+  &--item {
+    background-repeat: no-repeat;
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1rem;
+
+    &:first-child {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      display: none;
+      animation: fadeIn 500ms ease-in both;
+
+      &:first-child {
+        display: flex;
+      }
+    }
+
+    a {
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: left;
+      padding-left: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding-bottom: 6px;
+      opacity: 0;
+      transition: opacity 500ms cubic-bezier(0.19, 1, 0.22, 1);
+      font-size: .8rem;
+      outline-color: transparent;
+    }
+  }
+
+  .detect-hover {
+    height: 100%;
+    width: 4.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  &--mobile--show .path-activated,
+  a:hover ~ svg .path-activated,
+  a:active ~ svg .path-activated,
+  .detect-hover:hover ~ svg .path-activated,
+  .detect-hover:active ~ svg .path-activated,
+  .path-activated:hover,
+  .path-activated:active {
+    stroke-dashoffset: 0;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  &--mobile--show a,
+  .detect-hover:hover ~ a,
+  .detect-hover:active ~ a,
+  a:hover,
+  a:active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &--mobile--show .nav--item {
+    display: flex;
+  }
+
+  &--hide {
+    @media (max-width: 600px) {
+      a,
+      .path-activated {
+        display: none;
+      }
+    }
+  }
+}
+
 .section {
   max-width: 1200px;
   animation: fadeIn 500ms ease-in both;
   margin: 0 auto;
   padding: 2rem 1rem;
   border-bottom: 1px solid var(--pallete-contrast-light);
+
+  @media (max-width: 1300px) {
+    margin: 0 3rem;
+  }
+
+  @media (max-width: 600px) {
+    margin: 0;
+  }
 
   &--profile, &--about {
     display: flex;

@@ -37,6 +37,11 @@ export class HomeComponent {
    */
   public projectList: Array<Partial<ProjectProxy> & ShellItem> = getShellProjects();
 
+  /**
+   * Diz se deve exibir o menu
+   */
+  public shouldShowMenu: boolean = false;
+
   //#endregion
 
   //#region LifeCycle Events
@@ -44,23 +49,23 @@ export class HomeComponent {
   /**
    * Método que é executado quando esse componente é iniciado
    */
-   public async ngOnInit(): Promise<void> {
-     const { error, success: projects } = await this.projectService.getProjects();
+  public async ngOnInit(): Promise<void> {
+    const { error, success: projects } = await this.projectService.getProjects();
 
-     if (error)
-       return;
+    if (error)
+      return;
 
-     const shellProjects: Array<Partial<ProjectProxy> & ShellItem> = [];
+    const shellProjects: Array<Partial<ProjectProxy> & ShellItem> = [];
 
-     for (let i = 0; i < projects.length; i++) {
-       const shellProject = this.projectList[i] || { shellId: +new Date(), isShellState: false };
-       const project = { ...projects[i], ...shellProject, isShellState: false, };
+    for (let i = 0; i < projects.length; i++) {
+      const shellProject = this.projectList[i] || { shellId: +new Date(), isShellState: false };
+      const project = { ...projects[i], ...shellProject, isShellState: false };
 
-       shellProjects.push(project);
-     }
+      shellProjects.push(project);
+    }
 
-     this.projectList = shellProjects;
-   }
+    this.projectList = shellProjects;
+  }
 
   //#endregion
 
@@ -73,7 +78,7 @@ export class HomeComponent {
    * @param shellItem As informações do elemento shell
    */
   public trackByShellId(index: number, shellItem: ShellItem): number {
-     return shellItem.shellId;
+    return shellItem.shellId;
   }
 
   //#endregion
