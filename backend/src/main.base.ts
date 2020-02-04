@@ -57,6 +57,7 @@ function setupSwagger(app: INestApplication, config: ConfigService): void {
     .addTag(config.SWAGGER_TAG)
     .setBasePath(config.API_BASE_PATH)
     .addBearerAuth('Authorization', 'header')
+    .setSchemes('http', 'https')
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerOptions);
