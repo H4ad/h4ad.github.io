@@ -3,9 +3,10 @@
 import { Injectable } from '@angular/core';
 
 import { environment } from '../../../environments/environment';
+import { BadgeProxy } from '../../models/proxies/badge.proxy';
 import { ProjectProxy } from '../../models/proxies/project.proxy';
 import { AsyncResult, HttpAsyncService } from '../../services/http-async/http-async.service';
-import { getProjectsMockup } from './project.mockup';
+import { getBadgesMockup, getProjectsMockup } from './project.mockup';
 
 //#endregion
 
@@ -38,6 +39,16 @@ export class ProjectInteractor {
       return await getProjectsMockup();
 
     return await this.http.get<ProjectProxy[]>(environment.api.getProjects);
+  }
+
+  /**
+   * Método que busca todas as insignias
+   */
+  public async getBadges(): Promise<AsyncResult<BadgeProxy[]>> {
+    if (environment.isMockupEnabled)
+      return await getBadgesMockup();
+
+    return await this.http.get<BadgeProxy[]>(environment.api.getBadges);
   }
 
   //#endregion

@@ -1,6 +1,7 @@
 //#region Imports
 
 import { ShellItem } from '../../models/interfaces/shell-item';
+import { BadgeProxy } from '../../models/proxies/badge.proxy';
 import { ProjectProxy } from '../../models/proxies/project.proxy';
 import { AsyncResult } from '../../services/http-async/http-async.service';
 import { delay, noRef } from '../../utils/functions';
@@ -46,4 +47,25 @@ export async function getProjectsMockup(): Promise<AsyncResult<ProjectProxy[]>> 
       ],
     }),
   );
+}
+
+/**
+ * Método que representa a implementação mockada do método
+ */
+export async function getBadgesMockup(): Promise<AsyncResult<BadgeProxy[]>> {
+  await delay(500);
+
+  return noRef(<AsyncResult<BadgeProxy[]>> {
+    success: [
+      {
+        imageUrl: '/assets/icons/ionic_icon.png',
+        imageALt: 'O icone do Ionic',
+      },
+      {
+        imageUrl: '/assets/icons/angular_icon.png',
+        imageAlt: 'O icone do Angular.',
+      },
+    ],
+  });
+
 }

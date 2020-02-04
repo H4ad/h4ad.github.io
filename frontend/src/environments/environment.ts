@@ -8,6 +8,7 @@ export const environment = {
   api: {
     baseUrl: 'https://api.viniciusl.com.br/prod',
     getProjects: '/projects?join=badges',
+    getBadges: '/badges',
   },
 };
 
