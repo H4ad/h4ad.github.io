@@ -1,16 +1,18 @@
 {
-   "name": "freela.blog-norimport",
+   "name": "h4ad-api",
    "version": "0.0.1",
    "description": "",
    "author": "",
    "license": "MIT",
    "scripts": {
       "build": "tsc -p tsconfig.build.json",
+      "build:prod": "rm -r -f dist && rimraf dist && npm run build",
+      "build:docker": "docker build . -t h4ad/api",
       "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
       "start": "ts-node src/index.ts",
-      "start:dev": "nest start --watch",
       "start:debug": "nest start --debug --watch",
-      "build:prod": "rm -r -f dist && rimraf dist && npm run build",
+      "start:dev": "nest start --watch",
+      "start:azure": "npm run deploy && func host start",
       "start:prod": "node dist/main.js",
       "lint": "tslint -p tsconfig.json -c tslint.json",
       "test": "jest",
@@ -18,13 +20,12 @@
       "test:cov": "jest --coverage",
       "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
       "test:e2e": "jest --config ./test/jest-e2e.json",
-      "start:azure": "npm run deploy && func host start",
       "typeorm:cli": "ts-node ./node_modules/typeorm/cli -f ormconfig.js",
-      "add-migration": "npm run typeorm:cli -- migration:generate -n",
       "migration": "npm run typeorm:cli -- migration:run",
+      "add-migration": "npm run typeorm:cli -- migration:generate -n",
       "revert-migration": "npm run typeorm:cli -- migration:revert",
-      "build:docker": "docker build . -t h4ad/api",
-      "deploy:docker": "npm run build:docker && docker push h4ad/api"
+      "deploy:docker": "npm run build:docker && docker push h4ad/api",
+      "deploy:heroku": "cd .. && git subtree push --prefix backend heroku master"
    },
    "dependencies": {
       "@nestjs/common": "^6.10.14",
