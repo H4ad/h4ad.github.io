@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 
 import { getShellProjects } from '../../interactors/project/project.mockup';
 import { ShellItem } from '../../models/interfaces/shell-item';
+import { BadgeProxy } from '../../models/proxies/badge.proxy';
 import { ProjectProxy } from '../../models/proxies/project.proxy';
 import { ProjectService } from '../../services/project/project.service';
 
@@ -30,6 +31,15 @@ export class HomeComponent {
 
   //#endregion
 
+  //#region Private Properties
+
+  /**
+   * A lista com todos os projetos
+   */
+  private allProjects: Array<Partial<ProjectProxy> & ShellItem> = [];
+
+  //#endregion
+
   //#region Public Properties
 
   /**
@@ -42,6 +52,16 @@ export class HomeComponent {
    */
   public shouldShowMenu: boolean = false;
 
+  /**
+   * A lista de insignias que será usada para funcionar como menu para selecionar e filtrar os projetos
+   */
+  public badges: BadgeProxy[] = [];
+
+  /**
+   * Diz qual é a identificação do tipo de projeto que está selecionado
+   */
+  public selectedProjectType: number = -1;
+
   //#endregion
 
   //#region LifeCycle Events
@@ -50,10 +70,12 @@ export class HomeComponent {
    * Método que é executado quando esse componente é iniciado
    */
   public async ngOnInit(): Promise<void> {
-    const { error, success: projects } = await this.projectService.getProjects();
+    const [{ success: projects }, { success: badges }] = await Promise.all([this.projectService.getProjects(), this.projectService.getBadges()]);
 
-    if (error)
+    if (!badges || !projects)
       return;
+
+    this.badges = badges;
 
     const shellProjects: Array<Partial<ProjectProxy> & ShellItem> = [];
 
@@ -64,7 +86,8 @@ export class HomeComponent {
       shellProjects.push(project);
     }
 
-    this.projectList = shellProjects;
+    this.allProjects = shellProjects;
+    this.projectList = this.allProjects;
   }
 
   //#endregion
@@ -79,6 +102,26 @@ export class HomeComponent {
    */
   public trackByShellId(index: number, shellItem: ShellItem): number {
     return shellItem.shellId;
+  }
+
+  /**
+   * Método que retorna uma identificação para que o ngFor possa atualizar itens sem destruir toda a arvore HTML
+   *
+   * @param index O indice desse item
+   * @param item As informações do elemento
+   */
+  public trackById(index: number, item: { id: number }): number {
+    return item.id;
+  }
+
+  /**
+   * Método que é executado ao clicar em algum tipo de projeto
+   *
+   * @param badgeId A identificação da insignia
+   */
+  public onClickProjectType(badgeId: number): void {
+    this.projectList = this.allProjects.filter(project => badgeId === -1 || project.badges.some(badge => badge.id === badgeId));
+    this.selectedProjectType = badgeId;
   }
 
   //#endregion

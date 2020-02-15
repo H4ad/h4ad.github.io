@@ -4,6 +4,16 @@
 export interface BadgeProxy {
 
   /**
+   * A identificação da insignia
+   */
+  id: number;
+
+  /**
+   * O nome dessa insignia
+   */
+  name: string;
+
+  /**
    * A imagem do projeto
    */
   imageUrl: string;
