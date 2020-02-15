@@ -59,11 +59,15 @@ export async function getBadgesMockup(): Promise<AsyncResult<BadgeProxy[]>> {
     success: [
       {
         imageUrl: '/assets/icons/ionic_icon.png',
-        imageALt: 'O icone do Ionic',
+        imageAlt: 'O icone do Ionic',
+        name: 'Ionic',
+        id: 1,
       },
       {
         imageUrl: '/assets/icons/angular_icon.png',
         imageAlt: 'O icone do Angular.',
+        name: 'Angular',
+        id: 2,
       },
     ],
   });
