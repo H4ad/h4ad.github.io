@@ -1,6 +1,19 @@
 version: "3"
 
 services:
+
+  postgres:
+    image: postgres
+    container_name: h4ad_postgres
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    ports:
+      - ${DB_PORT}:5432
+    networks:
+      - backend
+
   mysql:
     image: mysql:5.7
     container_name: h4ad_mysql

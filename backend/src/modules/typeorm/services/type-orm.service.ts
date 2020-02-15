@@ -59,6 +59,22 @@ export class TypeOrmService implements TypeOrmOptionsFactory {
         password: this.config.DB_PASSWORD,
         acquireTimeout: this.config.DB_TIMEOUT,
       });
+    } else if (this.config.DB_TYPE === 'postgres') {
+      options = Object.assign(options, {
+        type: 'postgres',
+        charset: 'utf8mb4',
+        collation: 'utf8mb4_unicode_ci',
+        // https://stackoverflow.com/questions/35553432/error-handshake-inactivity-timeout-in-node-js-mysql-module
+        keepConnectionAlive: true,
+        host: this.config.DB_HOST,
+        port: this.config.DB_PORT,
+        username: this.config.DB_USER,
+        password: this.config.DB_PASSWORD,
+        acquireTimeout: this.config.DB_TIMEOUT,
+        extra: {
+          ssl: this.config.isProduction,
+        },
+      });
     } else if (this.config.DB_TYPE === 'sqlite') {
       options = Object.assign(options, {
         type: 'sqlite',
