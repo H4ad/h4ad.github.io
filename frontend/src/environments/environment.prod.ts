@@ -4,5 +4,6 @@ export const environment = {
   api: {
     baseUrl: 'https://api-h4ad.herokuapp.com/prod',
     getProjects: '/projects?join=badges',
+    getBadges: '/badges',
   },
 };
