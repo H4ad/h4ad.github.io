@@ -5,8 +5,6 @@ async function dev() {
   const app = await createApp();
   const config = await app.get(ConfigService);
 
-  app.enableCors();
-
   await app.listen(config.PORT);
 }
 

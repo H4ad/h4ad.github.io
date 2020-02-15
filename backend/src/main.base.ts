@@ -6,6 +6,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { CrudConfigService } from '@nestjsx/crud';
 import * as timeout from 'connect-timeout';
 
+import * as compression from 'compression';
 import * as rateLimit from 'express-rate-limit';
 import * as helmet from 'helmet';
 import { AppModule } from './app.module';
@@ -88,6 +89,7 @@ function setupMiddleware(app: INestApplication): void {
 
   app.enableCors();
 
+  app.use(compression());
   app.use(bodyParser.json());
 
   app.use(timeout('30s'));

@@ -60,7 +60,8 @@
       "pg": "^7.18.1",
       "typeorm": "0.2.22",
       "uuid": "^3.3.3",
-      "xss": "^1.0.6"
+      "xss": "^1.0.6",
+      "compression": "^1.7.4"
    },
    "devDependencies": {
       "@nestjs/cli": "^6.13.3",
