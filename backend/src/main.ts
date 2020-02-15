@@ -5,7 +5,7 @@ async function dev() {
   const app = await createApp();
   const config = await app.get(ConfigService);
 
-  await app.listen(config.API_PORT);
+  await app.listen(config.PORT);
 }
 
 dev();

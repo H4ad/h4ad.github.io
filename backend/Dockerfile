@@ -17,8 +17,8 @@ RUN npm run build:prod
 
 RUN rm -r -f src tsconfig.json tsconfig.build.json tslint.json
 
-ENV API_PORT=3000
+ENV PORT=3000
 
-EXPOSE ${API_PORT}
+EXPOSE ${PORT}
 
 ENTRYPOINT ["npm", "run", "start:prod"]

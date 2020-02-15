@@ -44,7 +44,7 @@ export class ConfigService extends implementOptionalInterface<Partial<Readonly<I
 
     const rule: DotEnvValidation = {
       API_BASE_PATH: envalid.str({ default: 'prod', devDefault: 'dev' }),
-      API_PORT: envalid.port({ default: 3000 }),
+      PORT: envalid.port({ default: 3000 }),
       API_DEFAULT_STRATEGY: envalid.str({ default: 'jwt' }),
       DB_TYPE: envalid.str({ default: 'mysql' }),
       DB_DATABASE: envalid.str({ devDefault: 'dev' }),

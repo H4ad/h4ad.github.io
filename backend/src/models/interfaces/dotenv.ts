@@ -64,7 +64,7 @@ export interface IDotEnv {
   /**
    * O número da porta que será executado a API
    */
-  API_PORT: number;
+  PORT: number;
 
   /**
    * A chave secreta do JWT
