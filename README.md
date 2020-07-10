@@ -7,11 +7,15 @@
 <a href="https://sourcerer.io/h4ad"><img src="https://img.shields.io/badge/SQL-39%20commits-orange.svg" alt="A quantidade de commits feitos que possuiam código em SQL."></a>
 <a href="https://codestats.net/users/H4ad"><img src="https://img.shields.io/badge/dynamic/json?color=success&label=Code%20Stats&query=total_xp&suffix=%20XP&url=https%3A%2F%2Fcodestats.net%2Fapi%2Fusers%2Fh4ad" alt="A quantidade de XP adquirida no Code Stats."></a>
 
-Esse será o repositório que conterá o meu portfólio.
+Esse será o repositório que conterá o meu portifólio.
+
+# Versão depreciada
+
+Essa é a versão antiga em Angular, eu decidi alternar para o [React Ultimate Resume](https://github.com/welovedevs/react-ultimate-resume) por conta da mínima manutenção que eu precisaria dar, dessa forma, essa versão aqui fica como um exemplo para quem quiser estudar.
 
 # Sobre mim
 
-Eu atualmente estou no 4º semestre da Engenharia de Computação na [Facens](https://facens.br/home) e trabalho em um dos núcleos de inovação da Facens chamado LIGA.
+Eu atualmente estou no 6º semestre da Engenharia de Computação na [Facens](https://facens.br/home) e trabalho em um dos núcleos de inovação da Facens chamado LIGA.
 
 Sobre o meu trabalho, eu fui contratado para desenvolver aplicativos
 híbridos com Ionic mas eu também crio soluções com outras tecnologias,
