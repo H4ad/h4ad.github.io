@@ -1,4 +1,4 @@
-<div class="scroller">
+<div class="root scroller">
   <nav class="nav" [ngClass]="{ 'nav--mobile--show': shouldShowMenu, 'nav--hide': !shouldShowMenu }">
     <div class="nav--item">
       <div (click)="shouldShowMenu = !shouldShowMenu;" class="detect-hover"></div>
@@ -8,17 +8,6 @@
         <path class="path-activated" fill="#171F35" stroke="#F6F7B0" stroke-width="2" d="M144.29 44h-98.1l18.56-21.32.59-.67-.6-.66L46.4 1h97.9l18.77 21.03L144.3 44z"/>
         <path fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
         <path fill="#171F35" d="M17 30h24v-2.67H17V30zm0-6.67h24v-2.66H17v2.66zM17 14v2.67h24V14H17z"/>
-      </svg>
-    </div>
-    <div class="nav--item">
-      <div class="detect-hover"></div>
-      <a (click)="shouldShowMenu = false;true;" href="#">Entrar</a>
-      <svg class="no-inherit" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 165 45">
-        <path class="pointer-events-none" fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
-        <path class="path-activated" fill="#171F35" stroke="#F6F7B0" stroke-width="2" d="M144.29 44h-98.1l18.56-21.32.59-.67-.6-.66L46.4 1h97.9l18.77 21.03L144.3 44z"/>
-        <path fill="#EBCC2C" stroke="#F6F7B0" stroke-width="2" d="M0 44V1h47.35L67 22.03 47.35 44H0z"/>
-        <path class="pointer-events-none" fill="#171F35" d="M29 9a12.94 12.94 0 00-12.14 8.35l-.23.65h2.85l.12-.31A10.34 10.34 0 1136.3 29.3a10.26 10.26 0 01-7.3 3.03 10.28 10.28 0 01-9.4-6.02l-.12-.32h-2.86l.23.65A13 13 0 1029 9z"/>
-        <path class="pointer-events-none" fill="#171F35" d="M16 23.34h11.86l-2.73 2.8L27 28l6-6-6-6-1.94 1.87 2.8 2.8H16v2.67z"/>
       </svg>
     </div>
     <div class="nav--item">
@@ -133,7 +122,7 @@
     <div class="about-description-container">
       <h2 class="section--title"><a class="no-link" href="#sobre-mim"># Sobre mim</a></h2>
       <p class="about-description-container--text">
-        Eu atualmente estou no 4º semestre da Engenharia de Computação na Facens e trabalho em um dos núcleos de inovação
+        Eu atualmente estou no 6º semestre da Engenharia de Computação na Facens e trabalho em um dos núcleos de inovação
         na Facens chamado LIGA, desenvolvendo aplicativos híbridos com Ionic.
         <br><br>
 
@@ -147,13 +136,18 @@
   <section id="meus-projetos" class="section section--projects">
     <h2 class="section--title"><a class="no-link" href="#meus-projetos"># Meus Projetos</a></h2>
 
-    <div class="projects-type">
-      <svg [ngClass]="{ 'project-type--selected': selectedProjectType === -1 }" class="no-inherit clickable" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 45">
+    <div class="projects-type scroller">
+      <svg [ngClass]="{ 'project-type--selected': selectedProjectType === -1 }"
+           class="no-inherit clickable projects-type--all"
+           xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 70 45">
         <path (click)="selectedProjectType = -1" class="badge--background" d="M1 44V1h47.35L68 22.03 48.35 44H1z" stroke="#F6F7B0" stroke-width="2"/>
         <path (click)="selectedProjectType = -1" class="badge--icon" d="M24.9 27.13L18.74 21l6.15-6.13L23.02 13 15 21l8.02 8 1.88-1.87zm8.2 0L39.25 21l-6.15-6.13L34.98 13 43 21l-8.02 8-1.88-1.87z" fill="#F6F7B0"/>
       </svg>
       <ng-container *ngFor="let badge of badges; trackBy: trackById; let i = index">
-        <div [ngClass]="{ 'project-type--selected': selectedProjectType === badge.id }" [style.transform]="'translateX(-' + (i + 1) + 'rem)'" class="projects-type--container">
+        <div [ngClass]="{ 'project-type--selected': selectedProjectType === badge.id }"
+             [style.transform]="'translateX(-' + (i + 1) + 'rem)'"
+             class="projects-type--container">
           <svg class="no-inherit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 45">
             <path class="badge--background" d="M99.95 44H2.19l18.5-21.33.58-.66-.6-.66L2.4 1h97.56l18.71 21.03L99.95 44z" stroke="#F6F7B0" stroke-width="2"/>
           </svg>
