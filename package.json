@@ -1,0 +1,42 @@
+{
+  "name": "@h4ad/portfolio",
+  "private": true,
+  "description": "O meu portfólio baseado no gatsby-theme-terminal",
+  "version": "0.1.0",
+  "author": "Vinícius Lourenço <vinicius.cardoso23@etec.sp.gov.br>",
+  "dependencies": {
+    "@mdx-js/mdx": "^1.5.5",
+    "@mdx-js/react": "^1.5.5",
+    "@pauliescanlon/gatsby-theme-terminal": "^0.0.31",
+    "date-fns": "^2.10.0",
+    "gatsby": "^2.19.7",
+    "gatsby-plugin-google-analytics": "^2.1.36",
+    "gatsby-plugin-mdx": "^1.0.84",
+    "gatsby-source-filesystem": "^2.1.46",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0",
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build && gh-pages -d public -b master"
+  },
+  "browserslist": [
+    ">0.25%",
+    "not dead",
+    "IE 11"
+  ]
+}

@@ -1,0 +1,218 @@
+---
+navigationLabel: Início
+---
+
+import { format } from 'date-fns'
+
+<SiteMetaData>
+{siteMetadata => {
+  const { name, description } = siteMetadata
+  return (
+        <Fragment>
+        <Heading variant='styles.h1'>{name}</Heading>
+        <Text>{description}</Text>
+        </Fragment>
+  )
+}}
+</SiteMetaData>
+
+<Divider/>
+
+## Sobre mim
+
+Atualmente faço Engenharia da Computação na [Facens](https://facens.br/home),
+além de trabalhar ali mesmo em um dos Núcleos de Inovação chamado [LIGA](https://liga.facens.br/).
+
+Eu normalmente trabalho com aplicativos híbridos feitos em Angular/Ionic, além disso,
+também desenvolvo APIs quando necessário para fornecer os dados para os Apps em NestJS.
+
+<Divider />
+
+<Flex sx={{ flexWrap: "wrap" }}>
+  <Box
+    sx={{
+      width: ["100%", "100%", "55%"],
+      mb: 3,
+      pr: [0,0, 4],
+    }}
+  >
+
+  ## Contato
+
+  <Heading variant='styles.h3' sx={{mb: 0}}>Email</Heading>
+  <Link href='mailto:vinicius.cardoso23@etec.sp.gov.br' variant='styles.a'>vinicius.cardoso23@etec.sp.gov.br</Link>
+  <Divider />
+
+  <Heading variant='styles.h3' sx={{mb: 0}}>GitHub</Heading>
+  <Link href='https://github.com/H4ad/' variant='styles.a'>https://github.com/H4ad/</Link>
+  <Divider />
+
+  <Heading variant='styles.h3' sx={{mb: 0}}>LinkedIn</Heading>
+  <Link href='https://www.linkedin.com/in/vinilourenco/' variant='styles.a'>https://linkedin.com/in/vinilourenco/</Link>
+  <Divider />
+
+  <Heading variant='styles.h3' sx={{mb: 0}}>Localização</Heading>
+  <Link href='https://pt.wikipedia.org/wiki/Sorocaba' variant='styles.a'>Sorocaba, SP - Brazil</Link>
+  <Divider />
+
+  </Box>
+
+  <Box
+    sx={{
+      width: ["100%", "100%", "45%"],
+      mb: 3
+    }}
+  >
+
+
+  ## Top 5 tags
+
+  <SourceTags filter="posts">
+    {tags => (
+      <Flex sx={{ flexDirection: 'column' }}>
+        {tags
+          .splice(0, 5)
+          .sort((a, b) => b.percent - a.percent)
+          .map((tag, index) => {
+            const { name, count, percent } = tag
+            return (
+              <Box
+                key={index}
+                sx={{ color: 'muted', mb: 3, svg: { fill: 'muted' } }}
+              >
+                <Flex sx={{ lineHeight: 'normal' }}>
+                  <Text
+                    sx={{ color: 'secondary', mr: 2, mb: 0 }}
+                  >{`${name}`}</Text>
+                  <Text sx={{ color: 'muted' }}>{percent}</Text>
+                  <Text sx={{ color: 'error' }}>%</Text>
+                </Flex>
+                <Flex>
+                 <Box>{'['}</Box>
+                  <Box sx={{flexBasis: '100%'}}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 1200 8"
+                      width="100%"
+                      height="8"
+                    >
+                      <rect width={`${percent * 3}%`} height={4} />
+                    </svg>
+                  </Box>
+                  <Box> {']'}</Box>
+                </Flex>
+              </Box>
+            )
+          })}
+      </Flex>
+    )}
+  </SourceTags>
+
+  </Box>
+</Flex>
+
+
+## Projects
+
+Abaixo, a lista com alguns projetos pessoais e profissionais do qual fui responsável por desenvolver.
+
+<SourceList filter="projects">
+  {projects => (
+    <Flex
+      sx={{
+        flexWrap: "wrap",
+        ml: theme => `-${theme.space[2]}px`,
+        mr: theme => `-${theme.space[2]}px`,
+      }}
+    >
+      {projects.map((edge, index) => {
+        const {
+          frontmatter: { title, date, url, misc },
+          fields: { slug },
+        } = edge.node
+        return (
+          <Box
+            key={index}
+            sx={{ mb: 3, maxWidth: ["100%", "50%", "33.333%"], width: ["100%", "50%", "33.333%"] }}
+          >
+            <Link href={slug} sx={{textDecoration: 'none'}}>
+              <Card
+                sx={{
+                  ml: 2,
+                  mr: 2,
+                  p: 3,
+                }}
+              >
+                <Text sx={{fontSize:0, color:'muted'}}>{format(new Date(date), 'd-MMM-u')}</Text>
+                <Heading variant="styles.h4" sx={{color: 'text'}}>{title}</Heading>
+                <Text sx={{textDecoration: 'underline'}}>View project</Text>
+              </Card>
+            </Link>
+          </Box>
+        )
+      })}
+    </Flex>
+  )}
+</SourceList>
+
+<Divider />
+
+<Flex sx={{ flexWrap: "wrap" }}>
+  <Box
+    sx={{
+      width: ["100%", "50%", "33.333%"]
+    }}
+  >
+
+  ## Experiência
+
+  <Text>Analista de Software</Text>
+  <Text variant='styles.small'>JJan 2020 – Atualmente</Text>
+  <Divider />
+
+  <Text>Assistente de Desenvolvimento de Software</Text>
+  <Text variant='styles.small'>Jun 2019 – Jan 2020</Text>
+  <Divider />
+
+  <Text>Estagiário - LIGA</Text>
+  <Text variant='styles.small'>Out 2018 - Jun 2019</Text>
+  <Divider />
+
+  <Divider />
+  </Box>
+
+  <Box
+    sx={{
+      width: ["100%", "50%", "33%"]
+    }}
+  >
+
+  ## Idiomas
+
+  <Text>Português</Text>
+  <Text variant='styles.small'>Fluente</Text>
+  <Divider />
+
+  <Text>Inglês</Text>
+  <Text variant='styles.small'>Intermediário</Text>
+  <Divider />
+  <Divider />
+  </Box>
+
+  <Box
+    sx={{
+      width: ["100%", "50%", "33%"]
+    }}
+  >
+
+  ## Estudos
+
+  <Text>Engenharia de Computação</Text>
+  <Text variant='styles.small'>2018 - Atualmente</Text>
+  <Divider />
+
+  <Divider />
+  </Box>
+
+</Flex>
+
