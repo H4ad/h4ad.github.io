@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="417dad67-8f34-4de2-a35e-9d83f5ce78f9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tmuxinator.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env.mysql.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env.postgres.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env.sqlite.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nest-cli.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/basic.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/cross-origin/requests.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/cross-origin/resource_timing.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/errors/custom_errors.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/internet_explorer/x-ua-compatible.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/location/security_file_access.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/location/web_performance_filename-based_cache_busting.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/location/web_performance_svgz-compression.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/media_types/character_encodings.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/media_types/media_types.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/security/content-security-policy.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/security/referrer-policy.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/security/server_software_information.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/security/strict-transport-security.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/security/x-content-type-options.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/security/x-frame-options.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/security/x-xss-protection.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/ssl/certificate_files.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/ssl/ocsp_stapling.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/ssl/policy_deprecated.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/ssl/policy_intermediate.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/ssl/policy_modern.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/ssl/ssl_engine.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/web_performance/cache-file-descriptors.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/web_performance/cache_expiration.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/web_performance/compression.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/web_performance/no-transform.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/web_performance/pre-compressed_content_brotli.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/h5bp/web_performance/pre-compressed_content_gzip.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/nginx/sites-available/api_insecure.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/ormconfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/common/base-crud.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/common/base-crud.proxy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/decorators/protect/protect.decorator.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/decorators/roles/roles.decorator.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/guards/roles/roles.guard.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/guards/roles/roles.guard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main.base.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/base/base-entity.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/base/verify.payload.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/enums/default-validation-messages.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/enums/type-orm-value.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/interfaces/dotenv.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/proxys/base/base.proxy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/proxys/key-value.proxy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/proxys/token.proxy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/transformers/key-value.transformer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth-token/auth-token.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth-token/models/login.payload.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/auth.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/controllers/auth.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/controllers/auth.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/controllers/local.strategy.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/models/jwt.payload.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/services/auth.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/services/auth.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/auth/services/jwt.strategy.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/badges/badge.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/badges/controllers/badge.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/badges/controllers/badge.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/badges/models/badge-create.payload.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/badges/models/badge-update.payload.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/badges/models/badge.proxy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/badges/services/badge.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/badges/services/badge.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/config/config.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/config/services/config.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/projects/controllers/project.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/projects/controllers/project.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/projects/models/project-create-badge.payload.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/projects/models/project-create.payload.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/projects/models/project-update.payload.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/projects/models/project.proxy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/projects/project.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/projects/services/project.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/projects/services/project.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/typeorm/services/type-orm.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/users/controllers/user.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/users/controllers/user.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/users/models/user-create.payload.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/users/models/user-update.payload.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/users/models/user.proxy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/users/services/user.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/users/services/user.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/modules/users/users.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/typeorm/entities/badge.entity.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/typeorm/entities/project.entity.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/typeorm/entities/user.entity.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/typeorm/migrations/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/typeorm/migrations/1581789340594-FirstMigration.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/typeorm/subscribers/user.subscriber.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/utils/apply-decorator.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/utils/crud.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/utils/entity.utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/utils/interface.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/utils/type-orm.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/utils/type.shared.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test/jest-e2e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tsconfig.build.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/browserslist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/CNAME" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/project-item/project-item.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/project-item/project-item.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/project-item/project-item.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/project-item/project-item.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/factories/http-async/http-async.factory.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/interactors/project/project.interactor.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/interactors/project/project.interactor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/interactors/project/project.mockup.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/interfaces/shell-item.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/proxies/badge.proxy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/proxies/project.proxy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/http-async/http-async.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/project/project.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/project/project.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/utils/functions.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/css/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/fonts/JetBrainsMono-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/fonts/JetBrainsMono-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/icons/angular_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/icons/ar_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/icons/aws_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/icons/ionic_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/icons/typescript_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/icons/unity_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/images/senninha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/svgs/badge_container.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1YoWQZnXVU06lxB8Aj8rDilzeeb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/projects" />
+      <recent name="$PROJECT_DIR$/src/projects/2020/07" />
+      <recent name="$PROJECT_DIR$/static/images/projects" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages" />
+      <recent name="$PROJECT_DIR$/src/projects" />
+      <recent name="$PROJECT_DIR$/static/images/projects/yes-no" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="417dad67-8f34-4de2-a35e-9d83f5ce78f9" name="Default Changelist" comment="" />
+      <created>1583609412325</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583609412325</updated>
+      <workItem from="1583609418844" duration="263000" />
+      <workItem from="1583678380172" duration="37000" />
+      <workItem from="1584891745039" duration="1227000" />
+      <workItem from="1584905245128" duration="911000" />
+      <workItem from="1585004388146" duration="636000" />
+      <workItem from="1585012003474" duration="811000" />
+      <workItem from="1585091076287" duration="801000" />
+      <workItem from="1594344260054" duration="9619000" />
+      <workItem from="1594383623563" duration="31000" />
+      <workItem from="1594562518092" duration="9441000" />
+      <workItem from="1594606144697" duration="7000" />
+      <workItem from="1594606186478" duration="103000" />
+      <workItem from="1594642140316" duration="9000" />
+      <workItem from="1595793011906" duration="3892000" />
+      <workItem from="1595796931152" duration="4691000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="700" y="177" key="#JavaScript" timestamp="1595793547813">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="700" y="177" key="#JavaScript/67.27.1853.1053@67.27.1853.1053" timestamp="1595793547812" />
+    <state x="822" y="405" key="#Other_File_Types" timestamp="1595796963135">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="822" y="405" key="#Other_File_Types/67.27.1853.1053@67.27.1853.1053" timestamp="1595796963135" />
+    <state x="644" y="345" width="688" height="414" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595797676894">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="644" y="345" width="688" height="414" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1595797676894" />
+    <state x="726" y="302" width="524" height="500" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595800018270">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="726" y="302" width="524" height="500" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1595800018270" />
+    <state x="776" y="311" width="424" height="482" key="FileChooserDialogImpl" timestamp="1594606287457">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="311" width="424" height="482" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1594606287457" />
+    <state x="482" y="188" key="SettingsEditor" timestamp="1595796900451">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="482" y="188" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1595796900451" />
+    <state x="167" y="127" width="1653" height="853" key="dock-window-1" timestamp="1595795086972">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="167" y="127" width="1653" height="853" key="dock-window-1/67.27.1853.1053@67.27.1853.1053" timestamp="1595795086972" />
+  </component>
+</project>

@@ -1,0 +1,375 @@
+---
+title: Os Poderes do CSS
+date: 2020-07-26
+dateModified: 2020-07-26
+author: Vinícius Lourenço
+tags: ["Angular", "Ionic", "TypeScript", "CSS"]
+featuredImage: 26-os-poderes-do-css.jpg
+---
+
+O CSS, assim como qualquer linguagem, possui várias peculiaridades que a tornam única e 
+tão incrível quanto ela é hoje, e as vezes, há momentos que ela é perfeita mas não
+usamos por algum motivo aleatório qualquer.
+
+Eu hoje irei mostrar a vocês como um incomodo por usar demais Angular acabou levando a uma série
+de refatorações de tal forma que o código final use apenas CSS e HTML e nada do Angular.
+
+## [Objetivo](#objetivo)
+
+Para começar eu irei mostrar a vocês o que estava antes, e o que foi pedido. O contexto é o seguinte:
+
+<Box
+  sx={{
+    width: ["100%"],
+  }}
+>
+  <Image
+      src='/images/posts/2020/07/26/card.png'
+      width='100%'
+      sx={{
+        objectFit: 'contain',
+      }}
+      alt='A imagem de um Card que será o objetivo para se programar.'
+  />
+</Box>
+
+<Divider/>
+
+Temos um `Toggle` que é usado para marcar a resposta da pessoa para uma pergunta de "Sim" e "Não" para várias opções. 
+Esse Toggle é usado no `Card` acima, e o que foi pedido era que o `Toggle` precisava ser mais claro
+com o seu objetivo, em outras palavras, precisava indicar quando dizia "Sim" e quando dizia "Não".
+
+De começo, pareceu um pedido estranho porque para mim era óbvio que o estado "On", em verde, indicava "Sim",
+e o estado de "Off", apagado, indicava não. 
+
+No entanto, o contra-ponto foi que uma grande parte dos usuários era de pessoas que não estavam acostumadas a usar aplicativos. 
+Dessa forma, apesar de intuitivo para mim como desenvolvedor, poderia ser confuso para as pessoas que não estão acostumadas a
+usar frequentemente aplicativos.
+
+Assim, o `Layout` desse `Toggle`, com a bela sugestão e implementação de um amigo chamado Henrique Rodrigues, foi alterado para a seguinte forma:
+<Box
+  sx={{
+    width: ["100%"],
+  }}
+>
+  <Image
+      src='/images/posts/2020/07/26/card_v2.png'
+      width='100%'
+      sx={{
+        objectFit: 'contain',
+      }}
+      alt='A imagem de um Card que será o objetivo para se programar só que agora na sua segunda versão.'
+  />
+</Box>
+
+<Divider/>
+
+Bonitinho né? Eu achei que ficou demais e consegue mostrar, de forma bem clara, os estados de "Sim" e "Não".
+
+Pois bem, com o `Layout` em mãos, bora para a primeira implementação.
+
+## [A primeira implementação](#a-primeira-implementacao)
+
+Para criar o `Toggle` de forma mais fácil, foi utilizado o [Ion Toggle](https://ionicframework.com/docs/api/toggle) do [Ionic](https://ionicframework.com/), um componente pronto e fácil de customizar, a implementação ficou assim:
+
+```html
+<div class="app--toggle">
+  <p>TypeScript</p>
+  <ion-toggle mode="md" [(ngModel)]="isSelected"></ion-toggle>
+  <span class="app--toggle--yes" [ngClass]="{'app--toggle--disabled': !isSelected}">S</span>
+  <span class="app--toggle--no" [ngClass]="{'app--toggle--disabled': isSelected}">N</span>
+</div>
+```
+
+No arquivo `.ts`:
+```typescript
+...
+/**
+ * Diz se o Toggle está selecionado
+ */
+public isSelected: boolean;
+...
+```
+
+E no arquivo `.scss`:
+```scss
+.app--toggle {
+  display: flex;
+  color: white;
+  align-items: center;
+
+  &--yes {
+    position: absolute;
+    right: 3rem;
+    z-index: 100;
+    color: #3DD598;
+    font-weight: bolder;
+
+    &--detail {
+      right: 1rem;
+    }
+  }
+
+  &--no {
+    position: absolute;
+    right: 6.7rem;
+    z-index: 100;
+    color: #FF464F;
+    font-weight: bolder;
+
+    &--detail {
+      right: 4.7rem;
+    }
+  }
+
+  &--disabled {
+    color: white;
+  }
+
+  p {
+    text-align: justify;
+    font-size: 1.4rem;
+    max-width: calc(100% - 6.5rem);
+  }
+
+  ion-toggle {
+    margin-left: auto;
+    --handle-background-checked: white;
+    --background-checked: #3DD598;
+    --handle-spacing: 0.4rem;
+    --handle-width: 2rem;
+    width: 6.5rem;
+    min-width: 6.5rem;
+    height: 2.8rem;
+    padding-right: 0;
+    padding-left: 0.5rem;
+  }
+}
+```
+
+Essa é uma das implementações possíveis, e resolve bem o problema de ter que colocar o "S" e "N" ao lado do `Toggle`.
+
+O que ela realmente faz é, quando o Angular vê a seguinte sintaxe `[ngClass]="{'app--toggle--disabled': !isSelected}"`, ele interpreta da seguinte forma:
+- Primeiro, obtém o objeto passado para ele.
+- Segundo, pega todas as propriedades do objeto e coloca em uma lista, ou seja, pega o objeto e transforma em `['app--toggle--disabled']`.
+- Terceiro, filtra todas as propriedades com o seguinte critério: só deve permanecer as propriedades cujos valores que sejam verdadeiros.
+- Terceiro, adiciona o nome da propriedade para a lista de classes do elemento em questão, naquele caso, a `div`.
+
+Dessa forma, caso `isSelected` seja `true`, ele irá aplicar a classe `app--toggle--disabled` no elemento, que fará com que o texto
+mude de cor para branco.
+
+Contudo, o que me incomodou é que eu precisava fazer isso ao menos umas 15x durante o projeto, e tinha horas que 
+a variável que guarda a informação se está selecionado ou não era algo como `formGroup.controls.someVariableWithBigName.value`.
+
+Assim, esse código começaria a ficar muuuuito verboso no HTML, e era algo que eu não queria.
+
+##### Mas você não poderia criar um componente para isso já que você está utilizando o Angular?
+
+A resposta simples é sim, contudo, implementar o `[(NgModel)]` no componente, dado a uma experiência passada,
+é um saco e meio bugado, além de levar um tempo enorme só para conseguir configurar direitinho.
+
+E eu preciso do `[(NgModel)]`, se não, para obter o novo valor quando ele clicar no `Toggle` vira mais uma 
+gambiarra do que uma implementação.
+
+> Se você não é familizarizado com Angular, o `[(NgModel)]` é basicamente a combinação do `setValue` e `value` do `useState` no React.
+
+Dessa forma, eu comecei a criar uma segunda implementação.
+
+## [A segunda implementação](#a-segunda-implementacao)
+
+Para essa implementação, o que eu foquei em reduzir a verbosidade do HTML, e o resultado acabou sendo esse:
+
+```diff
+<div class="app--toggle">
+  <p>TypeScript</p>
+  <ion-toggle mode="md" [(ngModel)]="isSelected"></ion-toggle>
+-  <span class="app--toggle--yes" [ngClass]="{'app--toggle--disabled': !isSelected}">S</span>
+-  <span class="app--toggle--no" [ngClass]="{'app--toggle--disabled': isSelected}">N</span>
++  <span class="app--toggle--yes">S</span>
++  <span class="app--toggle--no">N</span>
+</div>
+```
+
+E no arquivo `.scss`:
+```diff
+.app--toggle {
+  ...
++  ion-toggle[aria-checked='false'] ~ span.app--toggle--yes,
++  ion-toggle[aria-checked='true'] ~ span.app--toggle--no {
++    color: white;
++  }
+
+-  &--disabled {
+-    color: white;
+-  }
+  ...
+}
+```
+
+A explicação dessa implementação é o seguinte:
+
+Primeiro eu busco apenas os elementos `ion-toggle` que possuem um atributo `aria-checked` igual a `true`. 
+Esse `aria-checked` é o atributo que basicamente indica se o `ion-toggle` está ativado ou desativado.
+
+Após achar, ele usa o seletor `~`, que basicamente procura elementos sob o mesmo pai que combinem com algum critério, e aplica o CSS naquele elemento.
+Essa é uma boa forma de, a partir das condições de um elemento HTML, aplicar CSS a elementos que não sejam filhos mas sim "irmãos".
+
+> Essa é um macete que eu vi em [nesse CodePen](https://codepen.io/reaganhenke/pen/WLEYzp) fantástico, no qual, é utilizado para verificar
+> se o `checkbox` está ativo, e se estiver, ativa a animação do secador de cabelo.
+
+E por fim, ele verifica se existe algum `span` com uma classe `app--toggle--yes` para quando o `aria-checked` for `false`, 
+e algum `span` com a classe `app--toggle--no` quando o `aria-checked` for `false`.
+
+Assim, eu tenho o mesmo efeito de antes só que com muuito menos código HTML.
+
+Mas cara, eu ainda não me dei por contente, eu realmente não queria colocar qualquer HTML a mais, e apesar de ter reduzido bastante, ainda eram 
+duas linhas de código por `ion-toggle`. E com esse sentimento de descontentamento, eu segui para a terceira e última implementação.
+
+## [A terceira implementação](#a-terceira-implementacao)
+
+Nessa implementação, a coisa ficou bonita, segue o código completo:
+
+```diff
+<div class="app--toggle">
+  <p>TypeScript</p>
+  <ion-toggle mode="md" [(ngModel)]="isSelected"></ion-toggle>
+-  <span class="app--toggle--yes">S</span>
+-  <span class="app--toggle--no">N</span>
+</div>
+```
+
+E no arquivo `.scss`:
+```diff
+.app--toggle {
+  display: flex;
+  color: white;
+  align-items: center;
+
+-  &--yes {
+-    position: absolute;
+-    right: 3rem;
+-    z-index: 100;
+-    color: #3DD598;
+-    font-weight: bolder;
+
+-    &--detail {
+-      right: 1rem;
+-    }
+-  }
+
+-  &--no {
+-    position: absolute;
+-    right: 6.7rem;
+-    z-index: 100;
+-    color: #FF464F;
+-    font-weight: bolder;
+
+-    &--detail {
+-      right: 4.7rem;
+-    }
+-  }
+
+-  ion-toggle[aria-checked='false'] ~ span.app--toggle--yes,
+-  ion-toggle[aria-checked='true'] ~ span.app--toggle--no {
+-    color: white;
+-  }
+
+  p {
+    text-align: justify;
+    font-size: 1.4rem;
+    max-width: calc(100% - 6.5rem);
+  }
+
+  ion-toggle {
+    margin-left: auto;
+    --handle-background-checked: white;
+    --background-checked: #3DD598;
+    --handle-spacing: 0.4rem;
+    --handle-width: 2rem;
+    width: 6.5rem;
+    min-width: 6.5rem;
+    height: 2.8rem;
+    padding-right: 0;
+    padding-left: 0.5rem;
+
++    position: relative;
+
++    &:before, &:after {
++      font-size: 1.3rem;
++      position: absolute;
++      color: white;
++      top: 0.7rem;
++      font-weight: bold;
++      z-index: 10;
++    }
+
++    &:after {
++      left: 1.4rem;
++      content: "N";
++    }
+
++    &:before {
++      right: 1rem;
++      content: "S";
++    }
+
++    &[aria-checked='true']:before {
++      color: #3DD598;
++    }
+
++    &[aria-checked='false']:after {
++      color: #FF464F;
++    }
+  }
+}
+```
+
+Por fim, a solução final ficou apenas no CSS, é lindo ver aquele monte de HTML e condições complexas 
+se transformar nessa pequena quantidade de código CSS.
+
+Para essa solução, eu dependi totalmente dos [Pseudo Elementos](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-elementos),
+mais especificamente do `:before` e `:after`. Por aleatóriedade, eu escolhi o `:after` para colocar o `N` e o `:before` para colocar o `S`, e eu coloquei eles
+com `position: absolute` para ficarem na posição correta.
+
+Para colocar os textos, eu utilizei o atributo `content`, ele é sempre obrigatório, só que normalmente é colocado aspas vázias. 
+Nesse caso, demos uma nova utilidade a ele ao colocar o texto que queriamos posicionar.
+
+E após colocar o `content`, bastou verificar se o `aria-checked` estava `true` ou `false`, e aplicar a cor correta para cada caso, e o resultado ficou
+da seguinte forma:
+
+<Flex>
+<Box
+  sx={{
+    width: ["100%", "40%"],
+  }}
+>
+  <Image
+      src='/images/posts/2020/07/26/result.gif'
+      width='100%'
+      sx={{
+        objectFit: 'contain',
+      }}
+      alt='A imagem de um Card que será o objetivo para se programar só que agora na sua segunda versão.'
+  />
+</Box>
+</Flex>
+
+<Divider/>
+
+## [Conclusão](#conclusao)
+
+Umas das coisas que mais gosto do fato de ser programador, é que temos a capacidade de construir e destruir coisas instantaneamente.
+Em outras profissões, como um Engenheiro Civil, se você erra alguns calculos, não dá para simplesmente ir e derrubar a ponte para construí-la novamente.
+E com a programação, se eu não gostar, posso ir lá e apagar tudo e refazer do zero, assim como fizemos hoje.
+
+Assim, o que eu levo de mais importante todos os dias é: eu sempre tento fazer o meu melhor com a quantidade de tempo que foi me dada, e quando o
+tempo permitir, eu vou na calma e reescrevo algumas vezes para obter o melhor resultado.
+
+Então sempre que tiver algum tempo livre e lembrar de um código seu que te deixou meio desconfortável, vá lá e procure uma forma de otimizar ele.
+Particularmente, eu adoro esses momentos, é quase certeza que irei descobrir uma nova forma de resolver o mesmo problema, e com isso, adquirir sabedoria
+para resolver os novos problemas da melhor forma.
+
+## [Agradecimentos](#agradecimentos)
+
+Ao Wilson, pelo pedido de realizar essa melhoria visual. 
+E ao Henrique, por sugerir aquela brilhante ideia de colocar os "S" e "N" em cada ponta do `ion-toggle`.

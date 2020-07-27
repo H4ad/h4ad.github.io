@@ -11,7 +11,7 @@ Esse será o repositório que conterá o meu portfólio.
 
 # Sobre mim
 
-Eu atualmente estou no 4º semestre da Engenharia de Computação na [Facens](https://facens.br/home) e trabalho em um dos núcleos de inovação da Facens chamado LIGA.
+Eu atualmente eu estudo Engenharia de Computação na [Facens](https://facens.br/home) e trabalho em um dos núcleos de inovação da Facens chamado LIGA.
 
 Sobre o meu trabalho, eu fui contratado para desenvolver aplicativos
 híbridos com Ionic mas eu também crio soluções com outras tecnologias,
