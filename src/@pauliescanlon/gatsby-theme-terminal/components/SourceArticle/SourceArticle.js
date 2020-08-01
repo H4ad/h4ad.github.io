@@ -10,8 +10,9 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 
 import Index from 'src/components/DisqusSection';
+import pt from 'date-fns/locale/pt-BR';
 
-const formatDate = date => format(new Date(date), 'd-MMM-u');
+const formatDate = date => format(new Date(date), 'd-MMM-u', { locale: pt });
 
 export const SourceArticle = (props) => {
   const { title, tags, date, dateModified, author, isPrivate, featuredImage, featuredImageUrl, embedded, body, timeToRead, wordCount } = props;
@@ -20,7 +21,7 @@ export const SourceArticle = (props) => {
     <Main>
       { isPrivate && (
         <Fragment>
-          <Alert variant="error">This is a private post</Alert>
+          <Alert variant="error">Esse é um post privado</Alert>
           <Divider/>
         </Fragment>
       ) }
@@ -45,7 +46,7 @@ export const SourceArticle = (props) => {
         >
           { date && (
             <Text sx={ { color: 'muted' } }>
-              Date published: { formatDate(date) }
+              Publicado em: { formatDate(date) }
             </Text>
           ) }
         </Box>
@@ -61,7 +62,7 @@ export const SourceArticle = (props) => {
                 textAlign: ['left', 'right'],
               } }
             >
-              Date modified: { formatDate(dateModified) }
+              Modificado em: { formatDate(dateModified) }
             </Text>
           ) }
         </Box>
@@ -75,7 +76,7 @@ export const SourceArticle = (props) => {
         >
           <Text
             sx={ { color: 'muted' } }
-          >{ `${ timeToRead } min read / ${ wordCount.words } words` }</Text>
+          >{ `${ timeToRead } min de leitura / ${ wordCount.words } palavras` }</Text>
         </Box>
         { author && (
           <Box
@@ -84,7 +85,7 @@ export const SourceArticle = (props) => {
             } }
           >
             <Text sx={ { color: 'muted', textAlign: ['left', 'right'] } }>
-              Author: { author }
+              Autor: { author }
             </Text>
           </Box>
         ) }
