@@ -7,7 +7,7 @@ tags: ["Angular", "Ionic", "TypeScript", "CSS"]
 featuredImage: 26-os-poderes-do-css.jpg
 ---
 
-O CSS, assim como qualquer linguagem, possui várias peculiaridades que a tornam única e 
+O CSS, assim como qualquer linguagem, possui várias peculiaridades que a tornam única e
 tão incrível quanto ela é hoje, e as vezes, há momentos que ela é perfeita mas não
 usamos por algum motivo aleatório qualquer.
 
@@ -35,14 +35,14 @@ Para começar eu irei mostrar a vocês o que estava antes, e o que foi pedido. O
 
 <Divider/>
 
-Temos um `Toggle` que é usado para marcar a resposta da pessoa para uma pergunta de "Sim" e "Não" para várias opções. 
+Temos um `Toggle` que é usado para marcar a resposta da pessoa para uma pergunta de "Sim" e "Não" para várias opções.
 Esse Toggle é usado no `Card` acima, e o que foi pedido era que o `Toggle` precisava ser mais claro
 com o seu objetivo, em outras palavras, precisava indicar quando dizia "Sim" e quando dizia "Não".
 
 De começo, pareceu um pedido estranho porque para mim era óbvio que o estado "On", em verde, indicava "Sim",
-e o estado de "Off", apagado, indicava não. 
+e o estado de "Off", apagado, indicava não.
 
-No entanto, o contra-ponto foi que uma grande parte dos usuários era de pessoas que não estavam acostumadas a usar aplicativos. 
+No entanto, o contra-ponto foi que uma grande parte dos usuários era de pessoas que não estavam acostumadas a usar aplicativos.
 Dessa forma, apesar de intuitivo para mim como desenvolvedor, poderia ser confuso para as pessoas que não estão acostumadas a
 usar frequentemente aplicativos.
 
@@ -158,7 +158,7 @@ O que ela realmente faz é, quando o Angular vê a seguinte sintaxe `[ngClass]="
 Dessa forma, caso `isSelected` seja `true`, ele irá aplicar a classe `app--toggle--disabled` no elemento, que fará com que o texto
 mude de cor para branco.
 
-Contudo, o que me incomodou é que eu precisava fazer isso ao menos umas 15x durante o projeto, e tinha horas que 
+Contudo, o que me incomodou é que eu precisava fazer isso ao menos umas 15x durante o projeto, e tinha horas que
 a variável que guarda a informação se está selecionado ou não era algo como `formGroup.controls.someVariableWithBigName.value`.
 
 Assim, esse código começaria a ficar muuuuito verboso no HTML, e era algo que eu não queria.
@@ -168,7 +168,7 @@ Assim, esse código começaria a ficar muuuuito verboso no HTML, e era algo que 
 A resposta simples é sim, contudo, implementar o `[(NgModel)]` no componente, dado a uma experiência passada,
 é um saco e meio bugado, além de levar um tempo enorme só para conseguir configurar direitinho.
 
-E eu preciso do `[(NgModel)]`, se não, para obter o novo valor quando ele clicar no `Toggle` vira mais uma 
+E eu preciso do `[(NgModel)]`, se não, para obter o novo valor quando ele clicar no `Toggle` vira mais uma
 gambiarra do que uma implementação.
 
 > Se você não é familizarizado com Angular, o `[(NgModel)]` é basicamente a combinação do `setValue` e `value` do `useState` no React.
@@ -208,7 +208,7 @@ E no arquivo `.scss`:
 
 A explicação dessa implementação é o seguinte:
 
-Primeiro eu busco apenas os elementos `ion-toggle` que possuem um atributo `aria-checked` igual a `true`. 
+Primeiro eu busco apenas os elementos `ion-toggle` que possuem um atributo `aria-checked` igual a `true`.
 Esse `aria-checked` é o atributo que basicamente indica se o `ion-toggle` está ativado ou desativado.
 
 Após achar, ele usa o seletor `~`, que basicamente procura elementos sob o mesmo pai que combinem com algum critério, e aplica o CSS naquele elemento.
@@ -217,12 +217,12 @@ Essa é uma boa forma de, a partir das condições de um elemento HTML, aplicar 
 > Essa é um macete que eu vi em [nesse CodePen](https://codepen.io/reaganhenke/pen/WLEYzp) fantástico, no qual, é utilizado para verificar
 > se o `checkbox` está ativo, e se estiver, ativa a animação do secador de cabelo.
 
-E por fim, ele verifica se existe algum `span` com uma classe `app--toggle--yes` para quando o `aria-checked` for `false`, 
+E por fim, ele verifica se existe algum `span` com uma classe `app--toggle--yes` para quando o `aria-checked` for `false`,
 e algum `span` com a classe `app--toggle--no` quando o `aria-checked` for `false`.
 
 Assim, eu tenho o mesmo efeito de antes só que com muuito menos código HTML.
 
-Mas cara, eu ainda não me dei por contente, eu realmente não queria colocar qualquer HTML a mais, e apesar de ter reduzido bastante, ainda eram 
+Mas cara, eu ainda não me dei por contente, eu realmente não queria colocar qualquer HTML a mais, e apesar de ter reduzido bastante, ainda eram
 duas linhas de código por `ion-toggle`. E com esse sentimento de descontentamento, eu segui para a terceira e última implementação.
 
 ## [A terceira implementação](#a-terceira-implementacao)
@@ -324,14 +324,14 @@ E no arquivo `.scss`:
 }
 ```
 
-Por fim, a solução final ficou apenas no CSS, é lindo ver aquele monte de HTML e condições complexas 
+Por fim, a solução final ficou apenas no CSS, é lindo ver aquele monte de HTML e condições complexas
 se transformar nessa pequena quantidade de código CSS.
 
 Para essa solução, eu dependi totalmente dos [Pseudo Elementos](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-elementos),
 mais especificamente do `:before` e `:after`. Por aleatóriedade, eu escolhi o `:after` para colocar o `N` e o `:before` para colocar o `S`, e eu coloquei eles
 com `position: absolute` para ficarem na posição correta.
 
-Para colocar os textos, eu utilizei o atributo `content`, ele é sempre obrigatório, só que normalmente é colocado aspas vázias. 
+Para colocar os textos, eu utilizei o atributo `content`, ele é sempre obrigatório, só que normalmente é colocado aspas vázias.
 Nesse caso, demos uma nova utilidade a ele ao colocar o texto que queriamos posicionar.
 
 E após colocar o `content`, bastou verificar se o `aria-checked` estava `true` ou `false`, e aplicar a cor correta para cada caso, e o resultado ficou
@@ -371,5 +371,5 @@ para resolver os novos problemas da melhor forma.
 
 ## [Agradecimentos](#agradecimentos)
 
-Ao Wilson, pelo pedido de realizar essa melhoria visual. 
+Ao Wilson, pelo pedido de realizar essa melhoria visual.
 E ao Henrique, por sugerir aquela brilhante ideia de colocar os "S" e "N" em cada ponta do `ion-toggle`.

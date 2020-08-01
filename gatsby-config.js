@@ -24,5 +24,14 @@ module.exports = {
         trackingId: 'G-MMKNPDE0CK',
       },
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `viniciusl-com-br`
+      }
+    },
+    'gatsby-plugin-root-import',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
   ],
 }
