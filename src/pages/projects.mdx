@@ -1,12 +1,12 @@
 ---
-navigationLabel: Meus Projetos
+navigationLabel: My Projects
 ---
 
 import { format } from 'date-fns'
 
-# Meus Projetos
+# My Projects
 
-Abaixo, a lista dos projetos profissionais e pessoais no qual trabalhei nos últimos anos.
+Below is the list of professional and personal projects I've worked on in recent years.
 
 <SourceList filter="projects">
   {projects => (
@@ -35,7 +35,7 @@ Abaixo, a lista dos projetos profissionais e pessoais no qual trabalhei nos últ
                   p: 3,
                 }}
               >
-                <Text sx={{fontSize:0, color:'muted'}}>{format(new Date(date), 'd-MMM-u')}</Text>
+                <Text sx={{fontSize:0, color:'muted'}}>{format(new Date(date), 'u-MM')}</Text>
                 <Heading variant="styles.h4" sx={{color: 'text'}}>{title}</Heading>
                 <Text sx={{textDecoration: 'underline'}}>View project</Text>
               </Card>

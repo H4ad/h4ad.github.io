@@ -10,9 +10,8 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 
 import Index from 'src/components/DisqusSection';
-import pt from 'date-fns/locale/pt-BR';
 
-const formatDate = date => format(new Date(date), 'd-MMM-u', { locale: pt });
+const formatDate = date => format(new Date(date), 'd-MMM-u');
 
 export const SourceArticle = (props) => {
   const { title, tags, date, dateModified, author, isPrivate, featuredImage, featuredImageUrl, embedded, body, timeToRead, wordCount } = props;
@@ -46,7 +45,7 @@ export const SourceArticle = (props) => {
         >
           { date && (
             <Text sx={ { color: 'muted' } }>
-              Publicado em: { formatDate(date) }
+              Published At: { formatDate(date) }
             </Text>
           ) }
         </Box>
@@ -62,7 +61,7 @@ export const SourceArticle = (props) => {
                 textAlign: ['left', 'right'],
               } }
             >
-              Modificado em: { formatDate(dateModified) }
+              Modified At: { formatDate(dateModified) }
             </Text>
           ) }
         </Box>
@@ -76,7 +75,7 @@ export const SourceArticle = (props) => {
         >
           <Text
             sx={ { color: 'muted' } }
-          >{ `${ timeToRead } min de leitura / ${ wordCount.words } palavras` }</Text>
+          >{ `${ timeToRead } min read / ${ wordCount.words } words` }</Text>
         </Box>
         { author && (
           <Box
@@ -85,7 +84,7 @@ export const SourceArticle = (props) => {
             } }
           >
             <Text sx={ { color: 'muted', textAlign: ['left', 'right'] } }>
-              Autor: { author }
+              Author: { author }
             </Text>
           </Box>
         ) }

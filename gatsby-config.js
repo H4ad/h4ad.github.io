@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     name: `Vinícius Lourenço`,
-    description: `Bem-vindo ao meu portfólio :)`,
-    keywords: [`h4ad`, `vinicius`, `vinicius lourenço`, `developer`, `blog`],
+    description: `Welcome to my portfolio :)`,
+    keywords: [`h4ad`, `vinicius`, `vinicius lourenço`, `developer`, `blog`, 'serverless-adapter'],
     siteUrl: `https://viniciusl.com.br`,
     siteImage: `images/h4ad.jpg`,
     profileImage: `images/h4ad.jpg`,
