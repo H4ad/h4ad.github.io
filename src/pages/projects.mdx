@@ -3,6 +3,8 @@ navigationLabel: My Projects
 ---
 
 import { format } from 'date-fns'
+import { mix } from '@theme-ui/color';
+import Masonry from 'react-masonry-css';
 
 # My Projects
 
@@ -10,39 +12,63 @@ Below is the list of professional and personal projects I've worked on in recent
 
 <SourceList filter="projects">
   {projects => (
-    <Flex
-      sx={{
-        flexWrap: "wrap",
-        ml: theme => `-${theme.space[2]}px`,
-        mr: theme => `-${theme.space[2]}px`,
-      }}
-    >
+    <Masonry
+      breakpointCols={3}
+      style={{ display: 'flex', width: 'auto' }}
+      className="mansory"
+      columnClassName="mansory__column">
       {projects.map((edge, index) => {
         const {
-          frontmatter: { title, date, url, misc },
+          frontmatter: { title, date, misc, featuredImage, tags },
           fields: { slug },
         } = edge.node
         return (
           <Box
             key={index}
-            sx={{ mb: 3, maxWidth: ["100%", "50%", "33.333%"], width: ["100%", "50%", "33.333%"] }}
+            sx={{ mb: 3, width: '100%' }}
           >
-            <Link href={slug} sx={{textDecoration: 'none'}}>
+            <Link href={slug} sx={{ textDecoration: 'none' }}>
               <Card
                 sx={{
                   ml: 2,
                   mr: 2,
-                  p: 3,
                 }}
               >
-                <Text sx={{fontSize:0, color:'muted'}}>{format(new Date(date), 'u-MM')}</Text>
-                <Heading variant="styles.h4" sx={{color: 'text'}}>{title}</Heading>
-                <Text sx={{textDecoration: 'underline'}}>View project</Text>
+                {featuredImage && featuredImage.childImageSharp && (
+                  <Box sx={{ minHeight: '1px' }}>
+                    <Img
+                      style={{ width: '100%', objectFit: 'cover' }}
+                      fluid={featuredImage.childImageSharp.fluid}
+                      alt={featuredImage.childImageSharp.fluid.originalName}
+                    />
+                  </Box>
+                )}
+                <Box sx={{ p: 3 }}>
+                  <Text sx={{ fontSize: 0, color: 'muted' }}>{format(new Date(date), 'u-MM')}</Text>
+                  <Heading variant="styles.h4" sx={{ color: 'text' }}>[{misc}] {title}</Heading>
+                  {tags &&
+                    tags.map((tag, index) => (
+                      <Badge
+                        key={index}
+                        variant="primary"
+                        sx={{
+                          mb: 2,
+                          mr: 2,
+                          fontSize: '.6rem',
+                          color: mix('muted', 'primary', `${index / tags.length}`),
+                          borderColor: mix('muted', 'primary', `${index / tags.length}`),
+                        }}
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  <Text sx={{ textDecoration: 'underline' }}>View project</Text>
+                </Box>
               </Card>
             </Link>
           </Box>
         )
       })}
-    </Flex>
+    </Masonry>
   )}
 </SourceList>

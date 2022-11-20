@@ -1,0 +1,105 @@
+---
+title: Facens Covid
+author: Vinícius Lourenço
+tags: ['NestJS', 'Ionic', 'Angular', 'Capacitor', 'TypeScript']
+date: 2020-07-01
+dateModified: 2022-11-19
+featuredImage: 2020-07-01-facens-covid.jpg
+misc: App & API
+---
+
+Facens Covid was a mobile app developed during the pandemic to help Facens University control access to the campus.
+
+In the application, you can answer some check-up questions to see if you are qualified to enter the campus, also, you can attend which
+rooms you are entering by reading the QR Code, with this data we can analyze and identify how many people are infected and, if necessary, alert everyone
+who stayed in the same room as the infected person.
+
+Also, after the development of this app, I wrote a blog post about some css tips that I used in the app to reduce the amount of CSS and get the same visual result,
+you can find it [here (pt-BR).](/posts/2020/07/26-os-poderes-do-css/)
+
+In this project I was responsible for developing the mobile app in `Angular 2` and `Ionic 4`, using `Capacitor` to build the application.
+All the code was written in `TypeScript`, using `SCSS` as the style language organizing in the methodology [BEM](https://getbem.com/introduction/).
+
+I also helped to develop the API to serve and maintain the data for this application, the API was developed in `NestJS` and `TypeScript`.
+After development, we use `AWS Lambda` and `API Gateway V2` to host the API and `AWS RDS` as the database service.
+
+<Divider/>
+
+## Images
+
+<Flex sx={{ flexWrap: "wrap", spacing: 1 }}>
+  <Box
+    sx={{
+      width: ["100%", "50%"],
+      pl: 2,
+      mt: 1,
+    }}
+  >
+    <Image
+      src='/images/projects/facens-covid/facens_covid_1.png'
+      sx={{
+        objectFit: 'contain',
+      }}
+    />
+  </Box>
+
+  <Box
+    sx={{
+      width: ["100%", "50%"],
+      pl: 2,
+      mt: 1,
+    }}
+  >
+    <Image
+      src='/images/projects/facens-covid/facens_covid_2.png'
+      sx={{
+        objectFit: 'contain',
+      }}
+    />
+  </Box>
+
+  <Box
+    sx={{
+      width: ["100%", "50%"],
+      pl: 2,
+      mt: 1,
+    }}
+  >
+    <Image
+      src='/images/projects/facens-covid/facens_covid_3.png'
+      sx={{
+        objectFit: 'contain',
+      }}
+    />
+  </Box>
+
+  <Box
+    sx={{
+      width: ["100%", "50%"],
+      pl: 2,
+      mt: 1,
+    }}
+  >
+    <Image
+      src='/images/projects/facens-covid/facens_covid_4.png'
+      sx={{
+        objectFit: 'contain',
+      }}
+    />
+  </Box>
+
+  <Box
+    sx={{
+      width: ["100%", "50%"],
+      pl: 2,
+      mt: 1,
+    }}
+  >
+    <Image
+      src='/images/projects/facens-covid/facens_covid_5.png'
+      sx={{
+        objectFit: 'contain',
+      }}
+    />
+  </Box>
+</Flex>
