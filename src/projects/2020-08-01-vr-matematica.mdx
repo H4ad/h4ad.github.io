@@ -1,0 +1,36 @@
+---
+title: VR Matemática
+author: Vinícius Lourenço
+tags: ['NestJS', 'TypeScript', 'Angular']
+date: 2020-08-02
+dateModified: 2022-11-20
+featuredImage: 2020-08-01-vr-matematica.jpg
+misc: Site & API
+---
+
+VR Matemática was a project to a school to teach users more about matemathics throught the virtual reality.
+
+In this project I developed the API to serve and maintain the data for this VR App, the API was developed in `NestJS` and `TypeScript`.
+After development, we use `AWS Lambda` and `API Gateway HTTP` to host the API and `AWS RDS` as the database service.
+
+In addition, I developed a dashboard to manage the API, this project had a concept of licenses that can be sold by the app owner to other schools
+who want to integrate this VR app in their school curriculum. This dashboard was developed in `Angular` and hosted using `AWS Cloudfront` and `AWS S3`.
+
+<Divider/>
+
+## Architecture
+
+<Box
+  sx={{
+    width: ["100%"],
+    pl: 2,
+    mt: 1,
+  }}
+>
+  <Image
+    src='/images/projects/vr-matematica/api_architecture.png'
+    sx={{
+      objectFit: 'contain',
+    }}
+  />
+</Box>

@@ -26,8 +26,9 @@ export const SourceArticle = (props) => {
       ) }
 
       <Box sx={ { mb: 4 } }>
-        { featuredImage && featuredImage.childImageSharp && (
+        { featuredImage && featuredImage.childImageSharp && !tags?.includes('Ionic') && (
           <Img
+            style={{maxHeight: '30rem'}}
             fluid={ featuredImage.childImageSharp.fluid }
             alt={ featuredImage.childImageSharp.fluid.originalName }
           />

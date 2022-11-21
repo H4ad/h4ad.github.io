@@ -1,0 +1,40 @@
+---
+title: Monday Reports
+author: Vinícius Lourenço
+tags: ['NestJS', 'TypeScript', 'Angular']
+date: 2020-08-10
+dateModified: 2022-11-20
+featuredImage: 2020-08-10-monday-reports.jpg
+misc: Site & API
+---
+
+This was a project I started as a side project at my company to help them track how much time each user spends on the time tracking app within Monday.com.
+
+After presenting it to my managers, it was very helpful for us to bring this side project as a real project within your company and to know that this project is responsible for
+provide some valuable information about the current price of each project created on Monday.com by multiplying the hourly rate by the hours spent on that project.
+
+In this project I use `NestJS` and `TypeScript` to develop the API and deploy it to `AWS Lambda` behind an `AWS API Gateway HTTP`, using `AWS RDS` as a database service.
+For the dashboard, I develop using `Angular`, and inside the dashboard we can manage and see all result data from Monday.com.
+
+After some time, the API started crashing due to the amount of data they are processing and we had to manually trigger the data update.
+Then we added an `AWS EventBridge Scheduler` to trigger `AWS Lambda` directly using [Serverless Adapter](http://serverless-adapter.viniciusl.com.br/), developed by me,
+which can manage both `AWS API Gateway HTTP` and `AWS EventBridge Scheduler` in the same codebase and the same lambda instance.
+
+<Divider/>
+
+## Architecture
+
+<Box
+  sx={{
+    width: ["100%"],
+    pl: 2,
+    mt: 1,
+  }}
+>
+  <Image
+    src='/images/projects/monday-reports/api_architecture.png'
+    sx={{
+      objectFit: 'contain',
+    }}
+  />
+</Box>
