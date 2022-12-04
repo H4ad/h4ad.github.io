@@ -23,8 +23,8 @@ import { format } from 'date-fns'
 I study Computer Engineering at [Facens](https://facens.br/home) and I also work for one of the
 various sectors within the university called [LIGA](https://liga.facens.br/).
 
-Most of the time I work with NestJS APIs on AWS Lambda but I also create websites with React and Angular.
-I also develop some apps with Angular and Ionic but currently that's not what I study.
+Most of the time I work with `NestJS` APIs on `AWS Lambda` but I also create websites with `React` and `Angular`.
+I also develop some apps with `Ionic` but currently that's not what I study.
 
 <Divider />
 
@@ -61,95 +61,38 @@ I also develop some apps with Angular and Ionic but currently that's not what I 
   >
 
 
-  ## Posts by Tags
+  ## Top Technologies
 
-  <SourceTags filter="posts">
-    {tags => (
-      <Flex sx={{ flexDirection: 'column' }}>
-        {tags
-          .splice(0, 5)
-          .sort((a, b) => b.percent - a.percent)
-          .map((tag, index) => {
-            const { name, count, percent } = tag
-            return (
-              <Box
-                key={index}
-                sx={{ color: 'muted', mb: 3, svg: { fill: 'muted' } }}
-              >
-                <Flex sx={{ lineHeight: 'normal' }}>
-                  <Text
-                    sx={{ color: 'secondary', mr: 2, mb: 0 }}
-                  >{`${name}`}</Text>
-                  <Text sx={{ color: 'muted' }}>{percent}</Text>
-                  <Text sx={{ color: 'error' }}>%</Text>
-                </Flex>
-                <Flex>
-                 <Box>{'['}</Box>
-                  <Box sx={{flexBasis: '100%'}}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 1200 8"
-                      width="100%"
-                      height="8"
-                    >
-                      <rect width={`${percent * 3}%`} height={4} />
-                    </svg>
-                  </Box>
-                  <Box> {']'}</Box>
-                </Flex>
-              </Box>
-            )
-          })}
-      </Flex>
-    )}
+  <SourceTags filter="projects">
+    {tags => {
+      return (
+        <Flex sx={{ flexDirection: 'column' }}>
+          {tags
+            .splice(0, 5)
+            .sort((a, b) => b.percent - a.percent)
+            .map((tag, index) => {
+              const { name, count, percent } = tag
+              return (
+                <Box
+                  key={index}
+                  sx={{ color: 'muted', mb: 3, svg: { fill: 'muted' } }}
+                >
+                  <Flex sx={{ lineHeight: 'normal' }}>
+                    <Text
+                      sx={{ color: 'secondary', mr: 2, mb: 0 }}
+                    >{`${name}`}</Text>
+                    <Text sx={{ color: 'muted' }}> ({count} projects)</Text>
+                  </Flex>
+                </Box>
+              )
+            })}
+        </Flex>
+      );
+    }}
   </SourceTags>
 
   </Box>
 </Flex>
-
-
-## Projects
-
-Below, the list of some projects I was able to work on.
-
-<SourceList filter="projects">
-  {projects => (
-    <Flex
-      sx={{
-        flexWrap: "wrap",
-        ml: theme => `-${theme.space[2]}px`,
-        mr: theme => `-${theme.space[2]}px`,
-      }}
-    >
-      {projects.map((edge, index) => {
-        const {
-          frontmatter: { title, date, url, misc },
-          fields: { slug },
-        } = edge.node
-        return (
-          <Box
-            key={index}
-            sx={{ mb: 3, maxWidth: ["100%", "50%", "33.333%"], width: ["100%", "50%", "33.333%"] }}
-          >
-            <Link href={slug} sx={{textDecoration: 'none'}}>
-              <Card
-                sx={{
-                  ml: 2,
-                  mr: 2,
-                  p: 3,
-                }}
-              >
-                <Text sx={{fontSize:0, color:'muted'}}>{format(new Date(date), 'd-MMM-u')}</Text>
-                <Heading variant="styles.h4" sx={{color: 'text'}}>{title}</Heading>
-                <Text sx={{textDecoration: 'underline'}}>View project</Text>
-              </Card>
-            </Link>
-          </Box>
-        )
-      })}
-    </Flex>
-  )}
-</SourceList>
 
 <Divider />
 
@@ -193,11 +136,11 @@ Below, the list of some projects I was able to work on.
 
   ## Languages
 
-  <Text>Português</Text>
+  <Text>Portuguese</Text>
   <Text variant='styles.small'>Native</Text>
   <Divider />
 
-  <Text>Inglês</Text>
+  <Text>English</Text>
   <Text variant='styles.small'>Limited Working Proficiency</Text>
   <Divider />
   <Divider />
