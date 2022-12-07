@@ -7,16 +7,16 @@ tags: ["Angular", "Ionic", "TypeScript", "CSS"]
 featuredImage: 26-os-poderes-do-css.jpg
 ---
 
-O CSS, assim como qualquer linguagem, possui várias peculiaridades que a tornam única e
-tão incrível quanto ela é hoje, e as vezes, há momentos que ela é perfeita mas não
-usamos por algum motivo aleatório qualquer.
+CSS, like any language, has several peculiarities that make it unique and
+as amazing as it is today, and sometimes, there are moments when it's perfect but is not
+used for some random reason.
 
-Eu hoje irei mostrar a vocês como um incomodo por usar demais Angular acabou levando a uma série
-de refatorações de tal forma que o código final use apenas CSS e HTML e nada do Angular.
+Today I'm going to show you how a nuisance of using too much Angular ended up leading to a series
+of refactorings in such a way that the final code uses only CSS and HTML and nothing from Angular.
 
-## [Objetivo](#objetivo)
+## [Objective](#objective)
 
-Para começar eu irei mostrar a vocês o que estava antes, e o que foi pedido. O contexto é o seguinte:
+To begin with, I will show what went before and what was asked. The context is as follows:
 
 <Box
   sx={{
@@ -29,24 +29,25 @@ Para começar eu irei mostrar a vocês o que estava antes, e o que foi pedido. O
       sx={{
         objectFit: 'contain',
       }}
-      alt='A imagem de um Card que será o objetivo para se programar.'
+      alt='The image of a Card that will be the purpose of the programming.'
   />
 </Box>
 
 <Divider/>
 
-Temos um `Toggle` que é usado para marcar a resposta da pessoa para uma pergunta de "Sim" e "Não" para várias opções.
-Esse Toggle é usado no `Card` acima, e o que foi pedido era que o `Toggle` precisava ser mais claro
-com o seu objetivo, em outras palavras, precisava indicar quando dizia "Sim" e quando dizia "Não".
+We have a `Toggle` that is used to mark the person's answer to a question of "Yes" and "No" to various options.
+This Toggle is used in the `Card` above, and what was asked was that the `Toggle` needed to be clearer
+with its purpose, in other words, it needed to indicate when it said "Yes" and when it said "No."
 
-De começo, pareceu um pedido estranho porque para mim era óbvio que o estado "On", em verde, indicava "Sim",
-e o estado de "Off", apagado, indicava não.
+At first, it seemed like a strange request because it was clear to me that the "On" state, in green, indicated "Yes",
+and the state of "Off", turned off, indicated no.
 
-No entanto, o contra-ponto foi que uma grande parte dos usuários era de pessoas que não estavam acostumadas a usar aplicativos.
-Dessa forma, apesar de intuitivo para mim como desenvolvedor, poderia ser confuso para as pessoas que não estão acostumadas a
-usar frequentemente aplicativos.
+However, the counterpoint was that a large part of the users were people who were not used to using apps.
+Thus, although intuitive for me as a developer, it could be confusing for people who are not used to
+use apps frequently.
 
-Assim, o `Layout` desse `Toggle`, com a bela sugestão e implementação de um amigo chamado Henrique Rodrigues, foi alterado para a seguinte forma:
+Thus, the `Layout` of this `Toggle`, with the beautiful suggestion and implementation of a friend named Henrique Rodrigues, was changed to the following form:
+
 <Box
   sx={{
     width: ["100%"],
@@ -58,19 +59,19 @@ Assim, o `Layout` desse `Toggle`, com a bela sugestão e implementação de um a
       sx={{
         objectFit: 'contain',
       }}
-      alt='A imagem de um Card que será o objetivo para se programar só que agora na sua segunda versão.'
+      alt='The image of a Card that will be the objective for programming, but now in its second version.'
   />
 </Box>
 
 <Divider/>
 
-Bonitinho né? Eu achei que ficou demais e consegue mostrar, de forma bem clara, os estados de "Sim" e "Não".
+Cute huh? I thought it was too much and manages to show, in a very clear way, the states of "Yes" and "No".
 
-Pois bem, com o `Layout` em mãos, bora para a primeira implementação.
+Well, with the `Layout` in hand, let's go to the first implementation.
 
-## [A primeira implementação](#a-primeira-implementacao)
+## [The first implementation](#the-first-implementation)
 
-Para criar o `Toggle` de forma mais fácil, foi utilizado o [Ion Toggle](https://ionicframework.com/docs/api/toggle) do [Ionic](https://ionicframework.com/), um componente pronto e fácil de customizar, a implementação ficou assim:
+Para facilitar o `Toggle`, usamos o [Ion Toggle](https://ionicframework.com/docs/api/toggle) do [Ionic](https://ionicframework.com/), um componente pronto e fácil de customizar , a implementação fica assim:
 
 ```html
 <div class="app--toggle">
@@ -81,17 +82,14 @@ Para criar o `Toggle` de forma mais fácil, foi utilizado o [Ion Toggle](https:/
 </div>
 ```
 
-No arquivo `.ts`:
+On `.ts` file:
 ```typescript
 ...
-/**
- * Diz se o Toggle está selecionado
- */
 public isSelected: boolean;
 ...
 ```
 
-E no arquivo `.scss`:
+And on `.scss` file:
 ```scss
 .app--toggle {
   display: flex;
@@ -147,37 +145,37 @@ E no arquivo `.scss`:
 }
 ```
 
-Essa é uma das implementações possíveis, e resolve bem o problema de ter que colocar o "S" e "N" ao lado do `Toggle`.
+This is one of the possible implementations, and it solves the problem of having to put the "S" and the "N" next to `Toggle`.
 
-O que ela realmente faz é, quando o Angular vê a seguinte sintaxe `[ngClass]="{'app--toggle--disabled': !isSelected}"`, ele interpreta da seguinte forma:
-- Primeiro, obtém o objeto passado para ele.
-- Segundo, pega todas as propriedades do objeto e coloca em uma lista, ou seja, pega o objeto e transforma em `['app--toggle--disabled']`.
-- Terceiro, filtra todas as propriedades com o seguinte critério: só deve permanecer as propriedades cujos valores que sejam verdadeiros.
-- Terceiro, adiciona o nome da propriedade para a lista de classes do elemento em questão, naquele caso, a `div`.
+What it actually does is, when Angular sees the following syntax `[ngClass]="{'app--toggle--disabled': !isSelected}"`, it interprets it as follows:
+- First, it receives the object passed to it.
+- Secondly, it takes all the properties of the object and puts them in a list, that is, it takes the object and transforms it into `['app--toggle--disabled']`.
+- Third, filter all properties with the following: only properties whose values are true should remain.
+- Third, add the property name to the class list of the element in question, in this case, the `div`.
 
-Dessa forma, caso `isSelected` seja `true`, ele irá aplicar a classe `app--toggle--disabled` no elemento, que fará com que o texto
-mude de cor para branco.
+That way, if `isSelected` is `true`, it will apply the `app--toggle--disabled` class to the element, which will make the text
+change the color to white.
 
-Contudo, o que me incomodou é que eu precisava fazer isso ao menos umas 15x durante o projeto, e tinha horas que
-a variável que guarda a informação se está selecionado ou não era algo como `formGroup.controls.someVariableWithBigName.value`.
+However, what bothered me is that I had to do this at least 15x during the project, and there were times when
+the variable that keeps the information if it is selected or not was something like `formGroup.controls.someVariableWithBigName.value`.
 
-Assim, esse código começaria a ficar muuuuito verboso no HTML, e era algo que eu não queria.
+So this code would start to get sooo long winded in the HTML, and that's something I didn't want.
 
-##### Mas você não poderia criar um componente para isso já que você está utilizando o Angular?
+##### But couldn't you create a component for that since you're using Angular?
 
-A resposta simples é sim, contudo, implementar o `[(NgModel)]` no componente, dado a uma experiência passada,
-é um saco e meio bugado, além de levar um tempo enorme só para conseguir configurar direitinho.
+The simple answer is yes, however implement the `[(NgModel)]` in the component, given past experience,
+It's a pain and a bit buggy, and it takes a lot of time just to get it set up properly.
 
-E eu preciso do `[(NgModel)]`, se não, para obter o novo valor quando ele clicar no `Toggle` vira mais uma
-gambiarra do que uma implementação.
+And I need the `[(NgModel)]`, if not, to get the new value when he clicks the `Toggle` it turns one more
+gambiarra than an implementation.
 
-> Se você não é familizarizado com Angular, o `[(NgModel)]` é basicamente a combinação do `setValue` e `value` do `useState` no React.
+> If you're not familiar with Angular, the `[(NgModel)]` is basically the combination of the `setValue` and `value` of the `useState` in React.
 
-Dessa forma, eu comecei a criar uma segunda implementação.
+So I started creating a second implementation.
 
-## [A segunda implementação](#a-segunda-implementacao)
+## [The second implementation](#the-second-implementation)
 
-Para essa implementação, o que eu foquei em reduzir a verbosidade do HTML, e o resultado acabou sendo esse:
+For this implementation, what I focused on reducing the verbosity of the HTML, and the result ended up being this:
 
 ```diff
 <div class="app--toggle">
@@ -190,7 +188,7 @@ Para essa implementação, o que eu foquei em reduzir a verbosidade do HTML, e o
 </div>
 ```
 
-E no arquivo `.scss`:
+On `.scss` file:
 ```diff
 .app--toggle {
   ...
@@ -206,28 +204,28 @@ E no arquivo `.scss`:
 }
 ```
 
-A explicação dessa implementação é o seguinte:
+The explanation of this implementation is as follows:
 
-Primeiro eu busco apenas os elementos `ion-toggle` que possuem um atributo `aria-checked` igual a `true`.
-Esse `aria-checked` é o atributo que basicamente indica se o `ion-toggle` está ativado ou desativado.
+First I only look for the `ion-toggle` elements that have an `aria-checked` attribute of `true`.
+This `aria-checked` is the attribute that basically indicates whether `ion-toggle` is enabled or disabled.
 
-Após achar, ele usa o seletor `~`, que basicamente procura elementos sob o mesmo pai que combinem com algum critério, e aplica o CSS naquele elemento.
-Essa é uma boa forma de, a partir das condições de um elemento HTML, aplicar CSS a elementos que não sejam filhos mas sim "irmãos".
+Once found, it uses the `~` selector, which basically looks for elements under the same parent that match some criteria, and applies the CSS to that element.
+This is a good way to, from the conditions of an HTML element, apply CSS to elements that are not children but "siblings".
 
-> Essa é um macete que eu vi em [nesse CodePen](https://codepen.io/reaganhenke/pen/WLEYzp) fantástico, no qual, é utilizado para verificar
-> se o `checkbox` está ativo, e se estiver, ativa a animação do secador de cabelo.
+> This is a fantastic trick that I saw in [in this CodePen](https://codepen.io/reaganhenke/pen/WLEYzp), which is used to check
+> if the `checkbox` is active, and if it is, activates the hairdryer animation.
 
-E por fim, ele verifica se existe algum `span` com uma classe `app--toggle--yes` para quando o `aria-checked` for `false`,
-e algum `span` com a classe `app--toggle--no` quando o `aria-checked` for `false`.
+And finally, it checks if there is any `span` with an `app--toggle--yes` class for when `aria-checked` is `false`,
+and some span with the class `app--toggle--no` when `aria-checked` is `false`.
 
-Assim, eu tenho o mesmo efeito de antes só que com muuito menos código HTML.
+So, I have the same effect as before, only with a lot less HTML code.
 
-Mas cara, eu ainda não me dei por contente, eu realmente não queria colocar qualquer HTML a mais, e apesar de ter reduzido bastante, ainda eram
-duas linhas de código por `ion-toggle`. E com esse sentimento de descontentamento, eu segui para a terceira e última implementação.
+But man, I still wasn't happy, I really didn't want to put any extra HTML in there, and even though I reduced it quite a bit, they were still
+two lines of code per `ion-toggle`. And with that feeling of discontent, I moved on to the third and final implementation.
 
-## [A terceira implementação](#a-terceira-implementacao)
+## [The third implementation](#the-third-implementation)
 
-Nessa implementação, a coisa ficou bonita, segue o código completo:
+In this implementation, the code was beautiful, here is the complete code:
 
 ```diff
 <div class="app--toggle">
@@ -238,7 +236,7 @@ Nessa implementação, a coisa ficou bonita, segue o código completo:
 </div>
 ```
 
-E no arquivo `.scss`:
+On `.scss` file:
 ```diff
 .app--toggle {
   display: flex;
@@ -324,18 +322,18 @@ E no arquivo `.scss`:
 }
 ```
 
-Por fim, a solução final ficou apenas no CSS, é lindo ver aquele monte de HTML e condições complexas
-se transformar nessa pequena quantidade de código CSS.
+Finally, the final solution was just in the CSS, it's beautiful to see that bunch of HTML and complex conditions
+turn into this small amount of CSS code.
 
-Para essa solução, eu dependi totalmente dos [Pseudo Elementos](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-elementos),
-mais especificamente do `:before` e `:after`. Por aleatóriedade, eu escolhi o `:after` para colocar o `N` e o `:before` para colocar o `S`, e eu coloquei eles
-com `position: absolute` para ficarem na posição correta.
+For this solution, I totally relied on [Pseudo Elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements),
+more specifically of `:before` and `:after`. By randomness, I chose the `:after` to put the `N` and the `:before` to put the `S`, and I put them
+with `position: absolute` to get them in the correct position.
 
-Para colocar os textos, eu utilizei o atributo `content`, ele é sempre obrigatório, só que normalmente é colocado aspas vázias.
-Nesse caso, demos uma nova utilidade a ele ao colocar o texto que queriamos posicionar.
+To place the texts, I used the `content` attribute, it is always mandatory, but normally empty quotes are used.
+In this case, we gave it a new use by placing the text we wanted to position.
 
-E após colocar o `content`, bastou verificar se o `aria-checked` estava `true` ou `false`, e aplicar a cor correta para cada caso, e o resultado ficou
-da seguinte forma:
+And after placing the `content`, it was enough to check if the `aria-checked` was `true` or `false`, and apply the correct color for each case, and the result was
+this way:
 
 <Flex>
 <Box
@@ -349,27 +347,27 @@ da seguinte forma:
       sx={{
         objectFit: 'contain',
       }}
-      alt='A imagem de um Card que será o objetivo para se programar só que agora na sua segunda versão.'
+      alt='The image of a Card that will be the objective for programming, but now in its second version.'
   />
 </Box>
 </Flex>
 
 <Divider/>
 
-## [Conclusão](#conclusao)
+## [Conclusion](#conclusion)
 
-Umas das coisas que mais gosto do fato de ser programador, é que temos a capacidade de construir e destruir coisas instantaneamente.
-Em outras profissões, como um Engenheiro Civil, se você erra alguns calculos, não dá para simplesmente ir e derrubar a ponte para construí-la novamente.
-E com a programação, se eu não gostar, posso ir lá e apagar tudo e refazer do zero, assim como fizemos hoje.
+One of the things I love most about being a programmer is that we have the ability to build and destroy things instantly.
+In other professions, like a Civil Engineer, if you get a few calculations wrong, you can't just go and tear down the bridge and build it again.
+And with programming, if I don't like it, I can go there and erase everything and redo it from scratch, just like we did today.
 
-Assim, o que eu levo de mais importante todos os dias é: eu sempre tento fazer o meu melhor com a quantidade de tempo que foi me dada, e quando o
-tempo permitir, eu vou na calma e reescrevo algumas vezes para obter o melhor resultado.
+So the most important thing I take away every day is this: I always try to do my best with the amount of time given to me, and when
+time permitting, I'll take it easy and rewrite a few times to get the best result.
 
-Então sempre que tiver algum tempo livre e lembrar de um código seu que te deixou meio desconfortável, vá lá e procure uma forma de otimizar ele.
-Particularmente, eu adoro esses momentos, é quase certeza que irei descobrir uma nova forma de resolver o mesmo problema, e com isso, adquirir sabedoria
-para resolver os novos problemas da melhor forma.
+So whenever you have some free time and remember a code of yours that made you a little uncomfortable, go there and look for a way to optimize it.
+Particularly, I love these moments, it is almost certain that I will discover a new way to solve the same problem, and with that, acquire wisdom
+to solve the new problems in the best way.
 
-## [Agradecimentos](#agradecimentos)
+## [Acknowledgments](#acknowledgments)
 
-Ao Wilson, pelo pedido de realizar essa melhoria visual.
-E ao Henrique, por sugerir aquela brilhante ideia de colocar os "S" e "N" em cada ponta do `ion-toggle`.
+To Wilson, my boss, for his request to carry out this visual improvement.
+And to Henrique, for suggesting that brilliant idea of putting the "S" and "N" on each end of the ion-toggle.
