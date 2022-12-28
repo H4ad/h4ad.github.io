@@ -1,0 +1,116 @@
+---
+title: Portfolio Facens
+author: Vinícius Lourenço
+tags: ['React', 'NestJS', 'TypeScript']
+date: 2022-07-02
+dateModified: 2022-12-28
+featuredImage: 2022-07-01-portfolio-facens.jpg
+misc: Site & API
+---
+
+Portfolio Facens is a project to show the solutions developed by Liga and other sectors that are within the Facens company.
+
+In this project, I developed the frontend using `React` and used libraries like `Zustand` and `React Query` to handle state and requests.
+The site was hosted within `AWS` using `AWS S3` and `AWS Cloudfront`.
+
+For the backend, I used `NestJS` and `TypeScript` and it was hosted inside `AWS Lambda` using `AWS RDS` as database service.
+
+In this project I also use services like `AWS S3` to host the files, I added `OAuth2` authentication and I integrate with `Cloudflare Stream` to serve all the video files.
+
+The `Cloudflare Stream` integration was very interesting because I structured the API using some design patterns that made it easy to integrate with `Cloudflare Stream` without much effort.
+The workflow for this integration is: whenever a video file link is sent, I emit an event.
+I have a listener that checks if it is hosted inside our `S3 Bucket`, if so I send a request to `Cloudflare Stream` to process the video inside that `S3 Bucket`, then `Cloudflare` sends it back to me a notification when processing is complete.
+
+<Divider />
+
+## Architecture
+
+<Box
+  sx={{
+    width: ["100%"],
+    pl: 2,
+    mt: 1,
+  }}
+>
+  <Image
+    src='/images/projects/portfolio-facens/api_architecture.png'
+    sx={{
+      objectFit: 'contain',
+    }}
+  />
+</Box>
+
+## Images
+
+<Flex sx={{ flexWrap: "wrap", spacing: 1 }}>
+  <Box
+    sx={{
+      width: ["100%"],
+      pl: 2,
+      mt: 1,
+    }}
+  >
+    <Image
+      src='/images/projects/portfolio-facens/site_5.png'
+      sx={{
+        objectFit: 'contain',
+      }}
+    />
+  </Box>
+  <Box
+    sx={{
+      width: ["100%"],
+      pl: 2,
+      mt: 1,
+    }}
+  >
+    <Image
+      src='/images/projects/portfolio-facens/site_1.png'
+      sx={{
+        objectFit: 'contain',
+      }}
+    />
+  </Box>
+  <Box
+    sx={{
+      width: ["100%"],
+      pl: 2,
+      mt: 1,
+    }}
+  >
+    <Image
+      src='/images/projects/portfolio-facens/site_2.png'
+      sx={{
+        objectFit: 'contain',
+      }}
+    />
+  </Box>
+  <Box
+    sx={{
+      width: ["100%"],
+      pl: 2,
+      mt: 1,
+    }}
+  >
+    <Image
+      src='/images/projects/portfolio-facens/site_3.png'
+      sx={{
+        objectFit: 'contain',
+      }}
+    />
+  </Box>
+  <Box
+    sx={{
+      width: ["100%"],
+      pl: 2,
+      mt: 1,
+    }}
+  >
+    <Image
+      src='/images/projects/portfolio-facens/site_4.png'
+      sx={{
+        objectFit: 'contain',
+      }}
+    />
+  </Box>
+</Flex>

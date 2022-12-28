@@ -1,0 +1,47 @@
+---
+title: Votação Ratinho
+author: Vinícius Lourenço
+tags: ['NestJS', 'TypeScript']
+date: 2022-05-02
+dateModified: 2022-12-28
+featuredImage: 2022-05-01-votacao-ratinho.jpg
+misc: API
+---
+
+Votação Ratinho was a project we needed to build a voting system for a TV show called [Ratinho](https://www.sbt.com.br/auditorio/ratinho).
+
+This voting system was used in a singer challenge, each one will sign and the program's audience will vote as many times as they want for their favorite
+singer. In the following image, the score in the upper right corner showing each singer's vote percentages.
+
+<Image
+  src='/images/projects/votacao-ratinho/on_live.png'
+  sx={{
+    objectFit: 'contain',
+  }}
+/>
+
+To build this project I use `NestJS` and `TypeScript`, for better performance I change from `Express` to `Fastify` and use `AWS Cloudfront` and `ElastiCache` as cache.
+In order to handle the amount of votes I create a queue with `AWS SQS` and expose it using `API Gateway HTTP`, this way I could receive an infinite amount of votes because
+all the infrastructure is the responsibility of `AWS`, and I only interact with this vote when I consume the queue in batches of 300 votes every 3s.
+
+This project for me was so amazing that I wrote an article about the optimizations and architecture called
+["From a million invocations to thousand with correct caching"](/posts/2022/12/08-from-million-invocations-to-thousand-with-correct-caching/).
+
+<Divider />
+
+## Architecture
+
+<Box
+  sx={{
+    width: ["100%"],
+    pl: 2,
+    mt: 1,
+  }}
+>
+  <Image
+    src='/images/projects/votacao-ratinho/api_architecture.jpg'
+    sx={{
+      objectFit: 'contain',
+    }}
+  />
+</Box>
