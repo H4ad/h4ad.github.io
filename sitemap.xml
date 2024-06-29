@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://viniciusl.com.br/posts/2024/06/29-reducing-overhead-of-npm-run/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/posts/2022/12/08-from-million-invocations-to-thousand-with-correct-caching/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/projects/2022-07-01-portfolio-facens/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/projects/2022-05-01-votacao-ratinho/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/projects/2020-11-01-uqr/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://viniciusl.com.br/projects/2020-09-01-schaeffler/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/projects/2020-09-01-newton-quiz-enade/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://viniciusl.com.br/projects/2020-09-01-schaeffler/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/projects/2020-08-10-monday-reports/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/projects/2020-08-01-vr-matematica/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/posts/2020/07/26-os-poderes-do-css/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -16,8 +17,8 @@
 <url> <loc>https://viniciusl.com.br/projects/2019-09-01-guarulhos-sucatas/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/projects/2019-05-01-tour-facens/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/projects/2019-04-01-alexa-show-do-milhao/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://viniciusl.com.br/projects/2019-02-01-figurinhas-senninha/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/projects/2019-02-01-cordova-whatsapp-sticker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://viniciusl.com.br/projects/2019-02-01-figurinhas-senninha/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/projects/2018-10-01-yes-no/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/projects/2018-09-01-adpoints/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://viniciusl.com.br/dummy-page/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
