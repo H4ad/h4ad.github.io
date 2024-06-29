@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://viniciusl.com.br/sitemap.xml
+Sitemap: https://viniciusl.com.br/sitemap/sitemap-index.xml
 Host: https://viniciusl.com.br
